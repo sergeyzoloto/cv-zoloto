@@ -4,21 +4,6 @@
 
 ### Update README.md
 
-### Task 8: Implement SEO Optimization
-
-**Goal**: Improve search engine visibility and indexing.
-
-1. Add metadata components:
-
-   - Create reusable meta tags component
-   - Add proper Open Graph tags
-   - Implement structured data (JSON-LD)
-
-2. Optimize for search engines:
-   - Add sitemap.xml generation
-   - Implement robots.txt
-   - Add canonical URLs
-
 ### Task 9: Add Animation and Transitions
 
 **Goal**: Enhance user experience with subtle animations.
@@ -33,22 +18,6 @@
    - Loading states and transitions
    - Page transition effects
 
-### Task 11: Improve Accessibility
-
-**Goal**: Ensure the site meets WCAG 2.1 AA standards.
-
-1. Conduct accessibility audit:
-
-   - Run automated tests (Lighthouse, axe)
-   - Check keyboard navigation
-   - Test with screen readers
-
-2. Implement improvements:
-   - Fix any identified issues
-   - Add skip links
-   - Enhance focus styles
-   - Improve ARIA attributes
-
 ### Task 13: Implement Testing
 
 **Goal**: Add comprehensive testing to ensure reliability.
@@ -62,3 +31,21 @@
    - Unit tests for utilities and hooks
    - Component tests for UI elements
    - Integration tests for key user flows
+
+### Task 16: Add Summary Section to Storybook stories
+
+### Task 17: Add various screen formats to all the section stories
+
+### Task 18: Refactor Hero section
+
+### Task 19: Refactor Summary Section
+
+### Task 20: Refactor Skills Section
+
+### Task 21: Add Detailed Experience page template
+
+### Task 22: Create Career Recap Pages
+
+### Task 23: Create a visual settings window
+
+### Task 24
