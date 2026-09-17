@@ -15,6 +15,7 @@ export function ModeToggle() {
     <Button
       variant="ghost"
       size="icon"
+      className="relative"
       onClick={() => setTheme(toggleTheme(theme))}
       aria-label="Toggle theme"
     >

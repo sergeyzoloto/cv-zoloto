@@ -11,14 +11,17 @@ const ScrollContext = createContext<{ activeSection: string | null }>({
   activeSection: null,
 });
 
-export const ScrollProvider: React.FC<{ children: React.ReactNode }> = ({
-  children,
-}) => {
+export const ScrollProvider: React.FC<{
+  children: React.ReactNode;
+  /** Change this whenever the set of observed sections may have changed
+   *  (e.g. the presentation tone) to rebuild the observer. */
+  observeKey?: string;
+}> = ({ children, observeKey }) => {
   const [activeSection, setActiveSection] = useState<string | null>(null);
   const observerRef = useRef<IntersectionObserver | null>(null);
 
   useEffect(() => {
-    observerRef.current = new IntersectionObserver(
+    const observer = new IntersectionObserver(
       (entries) => {
         const visibleEntries = entries.filter((entry) => entry.isIntersecting);
         if (visibleEntries.length > 0) {
@@ -38,13 +41,15 @@ export const ScrollProvider: React.FC<{ children: React.ReactNode }> = ({
       { threshold: 0.5 }
     );
 
-    const sections = document.querySelectorAll("section[id]");
-    sections.forEach((section) => observerRef.current?.observe(section));
+    observerRef.current = observer;
+    document
+      .querySelectorAll("section[id]")
+      .forEach((section) => observer.observe(section));
 
     return () => {
-      sections.forEach((section) => observerRef.current?.unobserve(section));
+      observer.disconnect();
     };
-  }, []); // ✅ Only run on mount
+  }, [observeKey]); // ✅ Re-observe when the section set may have changed
 
   return (
     <ScrollContext.Provider value={{ activeSection }}>

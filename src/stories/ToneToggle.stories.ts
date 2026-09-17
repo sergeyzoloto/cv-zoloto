@@ -1,20 +1,19 @@
 import type { Meta, StoryObj } from "@storybook/react";
-
-import StoryHomePage from "../pages/HomePage";
+import { ToneToggle } from "../components/tone-toggle";
 
 const meta = {
-  title: "Pages/HomePage",
-  component: StoryHomePage,
+  title: "Components/ToneToggle",
+  component: ToneToggle,
   parameters: {
-    layout: "fullscreen",
+    layout: "centered",
   },
-} satisfies Meta<typeof StoryHomePage>;
+} satisfies Meta<typeof ToneToggle>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {};
 
-export const CasualMode: Story = {
+export const Casual: Story = {
   globals: { tone: "casual" },
 };

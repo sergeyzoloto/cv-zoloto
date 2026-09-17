@@ -312,5 +312,6 @@ export const nl: TranslationData = {
   interface: {
     rotateMessage:
       "Het scherm is te kort om de inhoud goed weer te geven. Draai je apparaat naar de portretmodus.",
+    toneToggleLabel: "Informele modus",
   },
 };

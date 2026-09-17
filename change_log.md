@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## 2026-09-17
+
+- Added a formal/casual presentation toggle in the header (coffee cup ↔ wine glass), mirroring the theme toggle
+- Casual tone: document scrolling instead of scroll-snap, reveal-on-scroll animations, timeline layouts, warm accent and softer corners
+- Added casual-voice copy for en/ru/nl as an overlay over the formal translations (same facts, relaxed register)
+- Added a global prefers-reduced-motion guard; reveal animations never hide content when motion is reduced
+- Fixed the absolutely positioned icon in the theme toggle anchoring to the header instead of its button
+- Interest tags in the About section now show in every language, not only English
+- Storybook: theme and tone toolbar switches, language provider decorator, ToneToggle and Reveal stories
+
 ## 2025-05-01
 
 - Changed interface to keep consistent layout and style

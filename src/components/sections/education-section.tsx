@@ -9,12 +9,14 @@ import {
 } from "../ui/card";
 import { Badge } from "../ui/badge";
 import { Section } from "../ui/section";
-import { useLanguage } from "@/context/language-context";
-import { translations } from "@/data/translations";
+import { Reveal } from "../ui/reveal";
+import { useContent } from "@/hooks/use-content";
+import { useTone } from "@/context/tone-context";
 
 export function EducationSection() {
-  const { language } = useLanguage();
-  const t = translations[language];
+  const t = useContent();
+  const { tone } = useTone();
+  const isCasual = tone === "casual";
   const educationData = t.education;
 
   const educationCards = educationData.education.map((edu, index) => (
@@ -63,6 +65,42 @@ export function EducationSection() {
       </CardContent>
     </Card>
   ));
+
+  // Casual: the same two diplomas as timeline rows
+  if (isCasual) {
+    return (
+      <Section
+        id="education"
+        title={educationData.title}
+        description={educationData.description}
+      >
+        <div className="w-full max-w-3xl mx-auto sm:mx-0">
+          {educationData.education.map((edu, index) => (
+            <Reveal
+              key={`education-timeline-${index}`}
+              delayMs={index * 80}
+              className="relative pl-6 sm:pl-8 pb-10 last:pb-0 border-l border-border"
+            >
+              <span
+                className="absolute -left-[5px] top-1.5 h-2.5 w-2.5 rounded-full bg-primary"
+                aria-hidden="true"
+              />
+              <p className="text-xs uppercase tracking-wide text-muted-foreground">
+                {edu.period}
+              </p>
+              <h3 className="mt-1 text-lg sm:text-xl font-semibold">
+                {edu.degree}
+              </h3>
+              <p className="text-sm text-muted-foreground">{edu.institution}</p>
+              <p className="mt-3 text-sm sm:text-base max-w-[65ch]">
+                {edu.shortDescription}
+              </p>
+            </Reveal>
+          ))}
+        </div>
+      </Section>
+    );
+  }
 
   return (
     <Section

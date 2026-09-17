@@ -8,6 +8,9 @@ export interface ProfileTranslation {
 
 export interface InterfaceTranslation {
   rotateMessage: string;
+  /** Accessible name of the formal/casual toggle. Describes the current state,
+   *  because the button carries aria-pressed. */
+  toneToggleLabel: string;
 }
 
 export interface ExperienceItemTranslation {
@@ -130,4 +133,78 @@ export interface TranslationData {
   contact: ContactTranslation;
   navigation: NavigationTranslation;
   interface: InterfaceTranslation;
+}
+
+/**
+ * Casual tone rewrites the *voice* of the copy, never the facts.
+ *
+ * It is an overlay, not a second translation tree: only the prose that
+ * actually differs is listed, and everything else falls through to the formal
+ * data. Structural fields (company, period, technologies, proficiency, contact
+ * values, icons) are deliberately absent — they are identical in both tones
+ * and must never be duplicated.
+ *
+ * Item arrays are merged by index against the formal arrays.
+ */
+export type CasualExperienceItemOverlay = Partial<
+  Pick<
+    ExperienceItemTranslation,
+    "position" | "description" | "shortResponsibilities" | "shortAchievements"
+  >
+>;
+
+export type CasualEducationItemOverlay = Partial<
+  Pick<EducationItemTranslation, "shortDescription">
+>;
+
+export type CasualTechnicalSkillOverlay = Partial<
+  Pick<TechnicalSkillTranslation, "description">
+>;
+
+export type CasualSoftSkillOverlay = Partial<
+  Pick<SoftSkillTranslation, "description">
+>;
+
+export interface CasualOverlay {
+  profile?: Partial<
+    Pick<ProfileTranslation, "title" | "contactButton" | "downloadButton">
+  >;
+  summary?: Partial<SummaryTranslation>;
+  experience?: Partial<
+    Pick<
+      ExperienceTranslation,
+      | "title"
+      | "description"
+      | "responsibilitiesLabel"
+      | "achievementsLabel"
+      | "technologiesLabel"
+    >
+  > & {
+    items?: CasualExperienceItemOverlay[];
+  };
+  education?: Partial<Pick<EducationTranslation, "title" | "description">> & {
+    education?: CasualEducationItemOverlay[];
+  };
+  skills?: Partial<
+    Pick<
+      SkillsTranslation,
+      | "title"
+      | "description"
+      | "introduction"
+      | "technicalSkillsTitle"
+      | "softSkillsTitle"
+    >
+  > & {
+    technicalSkills?: CasualTechnicalSkillOverlay[];
+    softSkills?: CasualSoftSkillOverlay[];
+  };
+  about?: Partial<Pick<AboutTranslation, "title" | "description">> & {
+    cards?: Array<Partial<AboutCardTranslation>>;
+  };
+  contact?: Partial<
+    Pick<
+      ContactTranslation,
+      "title" | "description" | "contactInfoTitle" | "contactInfoDescription"
+    >
+  >;
 }

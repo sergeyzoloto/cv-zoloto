@@ -1,28 +1,43 @@
 "use client";
 
 import { Button } from "../ui/button";
-import { useLanguage } from "@/context/language-context";
-import { translations } from "@/data/translations";
+import { useContent } from "@/hooks/use-content";
+import { useTone } from "@/context/tone-context";
+import { cn } from "@/lib/utils";
 
 export function HeroSection() {
-  const { language } = useLanguage();
-  const t = translations[language];
+  const t = useContent();
+  const { tone } = useTone();
+  const isCasual = tone === "casual";
   const profile = t.profile;
 
   return (
     <section
       id="hero"
-      className="min-h-dvh w-full flex items-center justify-center overflow-hidden snap-start snap-always"
+      className={cn(
+        "min-h-dvh w-full flex items-center justify-center overflow-hidden",
+        !isCasual && "snap-start snap-always"
+      )}
     >
       {/* Main container with defined width */}
-      <div className="h-full items-center justify-center flex w-full page-container section-container">
+      <div
+        className={cn(
+          "h-full items-center justify-center flex w-full page-container",
+          !isCasual && "section-container"
+        )}
+      >
         {/* Hero rectangle container with explicit height */}
         <div className="flex flex-col sm:flex-row gap-4 md:gap-8 w-[250px] h-full sm:h-[250px] sm:w-full relative">
           {/* Left Column - Content rectangle */}
           <div className="flex flex-col justify-between h-full items-center sm:w-3/5 w-content sm:items-start">
             {/* Title at the top left */}
             <div className="space-y-2">
-              <p className="font-bold tracking-tighter leading-none text-center sm:text-left title">
+              <p
+                className={cn(
+                  "font-bold tracking-tighter text-center sm:text-left title",
+                  isCasual ? "leading-tight" : "leading-none"
+                )}
+              >
                 {profile.name}
               </p>
 
@@ -54,7 +69,7 @@ export function HeroSection() {
                 </a>
               </Button>
 
-              <Button asChild variant="outline">
+              <Button asChild variant={isCasual ? "link" : "outline"}>
                 <a href="/SergeyZolotkoResume.pdf" download>
                   {profile.downloadButton}
                   <svg
@@ -80,7 +95,12 @@ export function HeroSection() {
 
           {/* Right Column - Image aligned to the right edge */}
           <div className="flex items-center sm:justify-end sm:w-2/5 h-full">
-            <div className="relative aspect-square overflow-hidden rounded-xl bg-muted w-full max-w-[250px] sm:h-full">
+            <div
+              className={cn(
+                "relative aspect-square overflow-hidden bg-muted w-full max-w-[250px] sm:h-full",
+                isCasual ? "rounded-full" : "rounded-xl"
+              )}
+            >
               <img
                 src={profile.profileImage || "/placeholder.svg"}
                 alt={profile.name}

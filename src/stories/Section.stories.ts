@@ -51,3 +51,13 @@ export const NoFullHeight: Story = {
     children: sampleChildren,
   },
 };
+
+export const Casual: Story = {
+  globals: { tone: "casual" },
+  args: {
+    id: "casual-section",
+    title: "Sample Section",
+    description: "Free-flowing layout with reveal animations.",
+    children: sampleChildren,
+  },
+};

@@ -1,6 +1,10 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+/* Presentation tone, set as a class on <html> by ToneProvider.
+   Must stay at top level: @custom-variant cannot be nested. */
+@custom-variant casual (&:where(.casual, .casual *));
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -29,6 +33,24 @@
   }
 }
 
+/* Casual tone: warmer accent, softer corners.
+   MUST come after .dark — both classes land on <html> with equal
+   specificity, so source order decides. .casual.dark (0,2,0) wins over both. */
+@layer base {
+  .casual {
+    --radius: 1rem;
+    --radius-md: 0.75rem;
+    --radius-lg: 1rem;
+    --radius-xl: 1.5rem;
+    --color-primary: rgba(166, 74, 42, 1);
+    --color-ring: rgba(166, 74, 42, 1);
+  }
+  .casual.dark {
+    --color-primary: rgba(230, 146, 96, 1);
+    --color-ring: rgba(230, 146, 96, 1);
+  }
+}
+
 @layer base {
   * {
     border-color: var(--color-border);
@@ -39,6 +61,23 @@
   }
   html {
     scroll-behavior: smooth;
+  }
+
+  /* Nothing in the project honoured this before, and tw-animate-css ships no
+     guard of its own. !important inside a layer still beats unlayered rules
+     (App.css, embla), because important declarations reverse layer order. */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
   }
 }
 

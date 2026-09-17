@@ -312,5 +312,6 @@ export const ru: TranslationData = {
   interface: {
     rotateMessage:
       "Высота экрана недостаточна для корректного отображения содержимого. Поверните устройство вертикально.",
+    toneToggleLabel: "Неформальный режим",
   },
 };

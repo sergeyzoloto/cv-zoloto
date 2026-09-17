@@ -317,5 +317,6 @@ export const en: TranslationData = {
   interface: {
     rotateMessage:
       "Screen height is too short to display the content properly. Please rotate your device to portrait mode.",
+    toneToggleLabel: "Relaxed mode",
   },
 };

@@ -9,12 +9,14 @@ import {
 } from "../ui/card";
 import { Badge } from "../ui/badge";
 import { Section } from "../ui/section";
-import { useLanguage } from "@/context/language-context";
-import { translations } from "@/data/translations";
+import { Reveal } from "../ui/reveal";
+import { useContent } from "@/hooks/use-content";
+import { useTone } from "@/context/tone-context";
 
 export function SummarySection() {
-  const { language } = useLanguage();
-  const t = translations[language];
+  const t = useContent();
+  const { tone } = useTone();
+  const isCasual = tone === "casual";
   const summaryData = t.summary;
   const experienceData = t.experience;
   const educationData = t.education;
@@ -113,6 +115,31 @@ export function SummarySection() {
       </CardContent>
     </Card>
   );
+
+  // Casual: one prose block instead of the card grid — the details live in
+  // the experience, education and skills sections further down.
+  if (isCasual) {
+    return (
+      <Section id="summary" title={summaryData.title}>
+        <div className="w-full max-w-[65ch] mx-auto sm:mx-0 space-y-8">
+          <p className="text-lg sm:text-xl lg:text-2xl leading-relaxed">
+            {summaryData.briefIntro}
+          </p>
+          <Reveal delayMs={160} className="flex flex-wrap gap-2">
+            {skillsData.skillSet.map((skill, index) => (
+              <Badge
+                key={`summary-skill-${index}`}
+                variant="outline"
+                className="text-sm px-3 py-1"
+              >
+                {skill}
+              </Badge>
+            ))}
+          </Reveal>
+        </div>
+      </Section>
+    );
+  }
 
   return (
     <Section id="summary" title={summaryData.title}>

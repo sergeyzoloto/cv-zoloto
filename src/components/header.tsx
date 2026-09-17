@@ -1,6 +1,7 @@
 "use client";
 
 import { ModeToggle } from "./mode-toggle";
+import { ToneToggle } from "./tone-toggle";
 import { LanguageSwitcher } from "./language-switcher";
 import { useLanguage } from "@/context/language-context";
 import { translations } from "@/data/translations";
@@ -20,12 +21,14 @@ export function Header() {
         <div className="flex items-center gap-2 md:hidden">
           {/* Theme toggle and language switcher for mobile - moved outside the dropdown */}
           <LanguageSwitcher />
+          <ToneToggle />
           <ModeToggle />
         </div>
 
         {/* Desktop navigation */}
         <nav className="hidden md:flex items-center gap-2">
           <LanguageSwitcher />
+          <ToneToggle />
           <ModeToggle />
         </nav>
       </div>

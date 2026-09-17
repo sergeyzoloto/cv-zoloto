@@ -83,3 +83,14 @@
   max-height: calc(100vh - 40px * 2);
   min-height: calc(100vh - 40px * 2);
 }
+
+/* Safety net for casual tone: this file is imported unlayered, so the rule
+   above beats every Tailwind utility (including casual:max-h-none). Components
+   should simply not apply .section-container in casual tone; this only catches
+   the ones that slip through. */
+.casual .section-container {
+  max-height: none;
+  min-height: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}

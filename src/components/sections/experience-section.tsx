@@ -9,12 +9,14 @@ import {
 } from "../ui/card";
 import { Badge } from "../ui/badge";
 import { Section } from "../ui/section";
-import { useLanguage } from "@/context/language-context";
-import { translations } from "@/data/translations";
+import { Reveal } from "../ui/reveal";
+import { useContent } from "@/hooks/use-content";
+import { useTone } from "@/context/tone-context";
 
 export function ExperienceSection() {
-  const { language } = useLanguage();
-  const t = translations[language];
+  const t = useContent();
+  const { tone } = useTone();
+  const isCasual = tone === "casual";
   const experienceData = t.experience;
 
   // Render experience cards
@@ -76,6 +78,86 @@ export function ExperienceSection() {
       </CardContent>
     </Card>
   );
+
+  // Casual: every role on one timeline, told in short prose
+  const renderTimelineEntry = (
+    experience: (typeof experienceData.items)[0],
+    index: number
+  ) => {
+    const shortLines = [
+      experience.shortResponsibilities,
+      experience.shortAchievements,
+    ].filter(Boolean);
+
+    return (
+      <Reveal
+        key={`experience-timeline-${index}`}
+        delayMs={index * 80}
+        className="relative pl-6 sm:pl-8 pb-10 last:pb-0 border-l border-border"
+      >
+        <span
+          className="absolute -left-[5px] top-1.5 h-2.5 w-2.5 rounded-full bg-primary"
+          aria-hidden="true"
+        />
+        <p className="text-xs uppercase tracking-wide text-muted-foreground">
+          {experience.period}
+        </p>
+        <h3 className="mt-1 text-lg sm:text-xl font-semibold">
+          {experience.position}
+        </h3>
+        <p className="text-sm text-muted-foreground">{experience.company}</p>
+        {experience.description && (
+          <p className="mt-1 text-sm text-muted-foreground italic">
+            {experience.description}
+          </p>
+        )}
+        <div className="mt-3 space-y-2 text-sm sm:text-base max-w-[65ch]">
+          {shortLines.length > 0 ? (
+            shortLines.map((line, lineIndex) => (
+              <p key={`experience-line-${index}-${lineIndex}`}>{line}</p>
+            ))
+          ) : (
+            // The oldest role has no short summary written for it
+            <ul className="list-disc pl-5 space-y-1">
+              {[...experience.responsibilities, ...experience.achievements].map(
+                (line, lineIndex) => (
+                  <li key={`experience-full-${index}-${lineIndex}`}>{line}</li>
+                )
+              )}
+            </ul>
+          )}
+        </div>
+        {experience.technologies && (
+          <div className="flex flex-wrap gap-2 mt-3">
+            {experience.technologies.map((tech, techIndex) => (
+              <Badge
+                key={`timeline-tech-${index}-${techIndex}`}
+                variant="secondary"
+              >
+                {tech}
+              </Badge>
+            ))}
+          </div>
+        )}
+      </Reveal>
+    );
+  };
+
+  if (isCasual) {
+    return (
+      <Section
+        id="experience"
+        title={experienceData.title}
+        description={experienceData.description}
+      >
+        <div className="w-full max-w-3xl mx-auto sm:mx-0">
+          {experienceData.items.map((experience, index) =>
+            renderTimelineEntry(experience, index)
+          )}
+        </div>
+      </Section>
+    );
+  }
 
   return (
     <Section

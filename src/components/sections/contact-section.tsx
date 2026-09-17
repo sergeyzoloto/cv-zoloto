@@ -8,18 +8,17 @@ import {
   CardTitle,
 } from "../ui/card";
 import { Section } from "../ui/section";
-import { useLanguage } from "@/context/language-context";
-import { translations } from "@/data/translations";
+import { useContent } from "@/hooks/use-content";
 
 export function ContactSection() {
-  const { language } = useLanguage();
-  const t = translations[language];
+  const t = useContent();
   const contactData = t.contact;
 
   const contactInfoCard = (
     <Card
       key="contact-info"
-      className="overflow-y-auto h-full max-h-[calc(100vh-15rem)]" // Adjust height for mobile
+      // Adjust height for mobile; casual scrolls with the document instead
+      className="overflow-y-auto h-full max-h-[calc(100vh-15rem)] casual:overflow-visible casual:max-h-none casual:h-auto casual:rounded-2xl casual:w-full"
     >
       <CardHeader>
         <CardTitle>{contactData.contactInfoTitle}</CardTitle>
@@ -158,7 +157,7 @@ export function ContactSection() {
       title={contactData.title}
       description={contactData.description}
     >
-      <div className="flex flex-row justify-center lg:gap-4 xl:gap-8">
+      <div className="flex flex-row justify-center lg:gap-4 xl:gap-8 casual:w-full casual:max-w-2xl casual:mx-auto casual:sm:mx-0">
         {contactInfoCard}
       </div>
     </Section>
