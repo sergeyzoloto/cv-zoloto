@@ -24,7 +24,7 @@ export function Header() {
         </div>
 
         {/* Desktop navigation */}
-        <nav className="hidden md:flex items-center gap-6">
+        <nav className="hidden md:flex items-center gap-2">
           <LanguageSwitcher />
           <ModeToggle />
         </nav>
