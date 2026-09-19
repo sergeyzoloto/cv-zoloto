@@ -6,6 +6,22 @@ import { useTone } from "@/context/tone-context";
 import { translations } from "@/data/translations";
 import { casualOverlays, mergeCasual } from "@/data/translations/casual";
 import type { TranslationData } from "@/data/translations/types";
+import type { Tone } from "@/types/tone";
+
+/**
+ * The copy for the current language in every tone at once.
+ *
+ * For components that reserve room for the longest variant, so that a tone
+ * switch changes the words but never the layout.
+ */
+export function useContentByTone(): Record<Tone, TranslationData> {
+  const { language } = useLanguage();
+
+  return useMemo(() => {
+    const formal = translations[language];
+    return { formal, casual: mergeCasual(formal, casualOverlays[language]) };
+  }, [language]);
+}
 
 /**
  * The copy for the current language and tone.
@@ -14,13 +30,6 @@ import type { TranslationData } from "@/data/translations/types";
  * overlay on top of it, so components keep reading the same shape.
  */
 export function useContent(): TranslationData {
-  const { language } = useLanguage();
   const { tone } = useTone();
-
-  return useMemo(() => {
-    const base = translations[language];
-    return tone === "casual"
-      ? mergeCasual(base, casualOverlays[language])
-      : base;
-  }, [language, tone]);
+  return useContentByTone()[tone];
 }

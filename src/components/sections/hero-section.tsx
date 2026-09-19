@@ -1,56 +1,93 @@
 "use client";
 
 import { Button } from "../ui/button";
-import { useContent } from "@/hooks/use-content";
+import { useContentByTone } from "@/hooks/use-content";
 import { useTone } from "@/context/tone-context";
 import { cn } from "@/lib/utils";
+import type { CasualOverlay } from "@/data/translations/types";
+import { tones, type Tone } from "@/types/tone";
+
+/** The profile strings that casual tone rewrites. */
+type ToneDependentKey = keyof NonNullable<CasualOverlay["profile"]>;
+
+/**
+ * Stacks every tone's variant of a string in one grid cell, so the box is
+ * always sized by the longest one and a tone switch never moves anything.
+ * The inactive variants only hold space: invisible and hidden from screen
+ * readers.
+ */
+function ToneText({
+  text,
+  className,
+}: Readonly<{ text: Record<Tone, string>; className?: string }>) {
+  const { tone } = useTone();
+
+  return (
+    <span className={cn("grid", className)}>
+      {tones.map((variant) => (
+        <span
+          key={variant}
+          aria-hidden={variant !== tone || undefined}
+          className={cn("[grid-area:1/1]", variant !== tone && "invisible")}
+        >
+          {text[variant]}
+        </span>
+      ))}
+    </span>
+  );
+}
 
 export function HeroSection() {
-  const t = useContent();
   const { tone } = useTone();
   const isCasual = tone === "casual";
-  const profile = t.profile;
+  const copy = useContentByTone();
+  const profile = copy[tone].profile;
 
+  const byTone = (key: ToneDependentKey): Record<Tone, string> => ({
+    formal: copy.formal.profile[key],
+    casual: copy.casual.profile[key],
+  });
+
+  // Tone may change paint (colours, corners, button variant) but never
+  // geometry: nothing below sizes or positions itself by tone.
   return (
     <section
       id="hero"
       className={cn(
-        "min-h-dvh w-full flex items-center justify-center overflow-hidden",
+        // py-10 clears the fixed 40px header and footer. svh is the screen
+        // with the mobile URL bar shown, which is what is visible at scroll
+        // top in both tones, and unlike dvh it doesn't relayout the page
+        // while casual scrolls the document and the bar collapses.
+        "flex min-h-svh w-full items-center justify-center overflow-hidden py-10",
         !isCasual && "snap-start snap-always"
       )}
     >
       {/* Main container with defined width */}
-      <div
-        className={cn(
-          "h-full items-center justify-center flex w-full page-container",
-          !isCasual && "section-container"
-        )}
-      >
+      <div className="flex w-full justify-center page-container">
         {/* Hero rectangle container with explicit height */}
-        <div className="flex flex-col sm:flex-row gap-4 md:gap-8 w-[250px] h-full sm:h-[250px] sm:w-full relative">
+        <div className="flex flex-col sm:flex-row gap-4 md:gap-8 w-[250px] sm:h-[250px] sm:w-full relative">
           {/* Left Column - Content rectangle */}
-          <div className="flex flex-col justify-between h-full items-center sm:w-3/5 w-content sm:items-start">
+          <div className="flex flex-col justify-between h-full items-center sm:w-3/5 sm:items-start">
             {/* Title at the top left */}
             <div className="space-y-2">
-              <p
-                className={cn(
-                  "font-bold tracking-tighter text-center sm:text-left title",
-                  isCasual ? "leading-tight" : "leading-none"
-                )}
-              >
+              <p className="font-bold tracking-tighter leading-none text-center sm:text-left title">
                 {profile.name}
               </p>
 
               <p className="text-muted-foreground pt-4 text-center sm:text-left subtitle">
-                {profile.title}
+                <ToneText text={byTone("title")} />
               </p>
             </div>
 
-            {/* Buttons at the bottom left */}
-            <div className="flex flex-row flex-wrap gap-2 mt-8 sm:mt-0 w-full justify-center sm:justify-start">
+            {/* Buttons at the bottom left. Always stacked on mobile, so the
+                arrangement never depends on whether the labels fit in 250px */}
+            <div className="flex flex-col items-center gap-2 mt-8 sm:mt-0 w-full sm:flex-row sm:flex-wrap sm:justify-start">
               <Button asChild>
                 <a href="#contact">
-                  {profile.contactButton}
+                  <ToneText
+                    text={byTone("contactButton")}
+                    className="justify-items-center"
+                  />
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
@@ -69,9 +106,18 @@ export function HeroSection() {
                 </a>
               </Button>
 
-              <Button asChild variant={isCasual ? "link" : "outline"}>
+              <Button
+                asChild
+                variant={isCasual ? "link" : "outline"}
+                // The link variant has no border; a transparent one keeps its
+                // box identical to the outline one
+                className={cn(isCasual && "border border-transparent")}
+              >
                 <a href="/SergeyZolotkoResume.pdf" download>
-                  {profile.downloadButton}
+                  <ToneText
+                    text={byTone("downloadButton")}
+                    className="justify-items-center"
+                  />
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
@@ -94,10 +140,14 @@ export function HeroSection() {
           </div>
 
           {/* Right Column - Image aligned to the right edge */}
-          <div className="flex items-center sm:justify-end sm:w-2/5 h-full">
+          <div className="flex items-center justify-center sm:justify-end sm:w-2/5 h-full">
             <div
               className={cn(
-                "relative aspect-square overflow-hidden bg-muted w-full max-w-[250px] sm:h-full",
+                // On short phones (iPhone SE) the photo gives way first, so the
+                // stacked column still clears the header and footer: 360px is
+                // those 80px plus the name, subtitle and buttons above it.
+                // Below 160px the section grows and scrolls instead.
+                "relative aspect-square overflow-hidden bg-muted w-full max-w-[clamp(160px,100svh_-_360px,250px)] sm:max-w-[250px] sm:h-full",
                 isCasual ? "rounded-full" : "rounded-xl"
               )}
             >

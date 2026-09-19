@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file.
 
+## 2026-09-19
+
+- Fixed the hero section jumping when the tone changes: one layout for both tones instead of formal-only viewport sizing, one title line-height, and the subtitle and button labels reserve room for their longer tone variant
+- Hero is sized with svh instead of vh, so on phones it is centred in the visible screen with the URL bar shown
+- Hero buttons are always stacked on mobile; the casual download link keeps the outline button's box
+- Hero photo shrinks on short phones (iPhone SE) so the content clears the fixed header and footer
+- Added useContentByTone for components that need the copy in both tones at once
+- Storybook: Formal and Casual hero stories, and a play test asserting the hero keeps its geometry across a tone switch
+
 ## 2026-09-17
 
 - Added a formal/casual presentation toggle in the header (coffee cup ↔ wine glass), mirroring the theme toggle
