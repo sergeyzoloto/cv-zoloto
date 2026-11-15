@@ -1,15 +1,6 @@
-// src/context/scroll-context.tsx
-import React, {
-  createContext,
-  useContext,
-  useEffect,
-  useRef,
-  useState,
-} from "react";
-
-const ScrollContext = createContext<{ activeSection: string | null }>({
-  activeSection: null,
-});
+// src/context/scroll-provider.tsx
+import React, { useEffect, useRef, useState } from "react";
+import { ScrollContext } from "./scroll-context";
 
 export const ScrollProvider: React.FC<{
   children: React.ReactNode;
@@ -57,5 +48,3 @@ export const ScrollProvider: React.FC<{
     </ScrollContext.Provider>
   );
 };
-
-export const useScrollContext = () => useContext(ScrollContext);

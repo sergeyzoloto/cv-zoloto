@@ -1,5 +1,5 @@
 import { useEffect, type ReactNode } from "react";
-import { LanguageProvider } from "../src/context/language-context";
+import { LanguageProvider } from "../src/context/language-provider";
 import { ToneProviderContext } from "../src/context/tone-context";
 import type { Tone } from "../src/types/tone";
 

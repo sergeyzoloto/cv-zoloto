@@ -1,5 +1,5 @@
 import { BrowserRouter as Router } from "react-router-dom";
-import { LanguageProvider } from "./context/language-context";
+import { LanguageProvider } from "./context/language-provider";
 
 /**
  * This component wraps our App with the providers

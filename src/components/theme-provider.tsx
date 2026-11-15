@@ -1,27 +1,14 @@
 "use client";
 
 import type React from "react";
-import { createContext, useContext, useEffect, useState, useMemo } from "react";
-
-type Theme = "dark" | "light" | "system";
+import { useEffect, useState, useMemo } from "react";
+import { ThemeProviderContext, type Theme } from "./theme-context";
 
 type ThemeProviderProps = Readonly<{
   children: React.ReactNode;
   defaultTheme?: Theme;
   storageKey?: string;
 }>;
-
-type ThemeProviderState = {
-  theme: Theme;
-  setTheme: (theme: Theme) => void;
-};
-
-const initialState: ThemeProviderState = {
-  theme: "system",
-  setTheme: () => null,
-};
-
-const ThemeProviderContext = createContext<ThemeProviderState>(initialState);
 
 export function ThemeProvider({
   children,
@@ -66,27 +53,3 @@ export function ThemeProvider({
     </ThemeProviderContext.Provider>
   );
 }
-
-// Add a utility function to toggle between light and dark
-export function toggleTheme(currentTheme: Theme): Theme {
-  // If system, we need to check what the system theme is
-  if (currentTheme === "system") {
-    const systemTheme = window.matchMedia("(prefers-color-scheme: dark)")
-      .matches
-      ? "dark"
-      : "light";
-    return systemTheme === "dark" ? "light" : "dark";
-  }
-
-  // Otherwise just toggle between light and dark
-  return currentTheme === "dark" ? "light" : "dark";
-}
-
-export const useTheme = () => {
-  const context = useContext(ThemeProviderContext);
-
-  if (context === undefined)
-    throw new Error("useTheme must be used within a ThemeProvider");
-
-  return context;
-};
