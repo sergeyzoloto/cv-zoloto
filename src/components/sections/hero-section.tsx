@@ -76,7 +76,7 @@ export function HeroSection() {
               // stacked column still clears the header and footer: 400px is
               // those 80px plus the roles, tagline and buttons around it.
               // Below 160px the section grows and scrolls instead.
-              "relative aspect-square w-full max-w-[clamp(160px,100svh_-_400px,250px)] overflow-hidden rounded-full bg-muted md:order-2 md:size-[250px] md:max-w-none"
+              "relative aspect-square w-full max-w-[clamp(160px,100svh_-_400px,250px)] overflow-hidden rounded-full bg-muted order-2 md:size-[250px] md:max-w-none"
             )}
           >
             <img
@@ -86,10 +86,10 @@ export function HeroSection() {
             />
           </div>
 
-          <p className="hero-role font-bold leading-none tracking-tighter md:order-1 md:text-center">
+          <p className="hero-role font-bold leading-none tracking-tighter order-1 md:text-center">
             {profile.roleLeft}
           </p>
-          <p className="hero-role font-bold leading-none tracking-tighter md:order-3 md:text-center">
+          <p className="hero-role font-bold leading-none tracking-tighter order-3 md:text-center">
             {profile.roleRight}
           </p>
         </div>
@@ -97,9 +97,9 @@ export function HeroSection() {
         <Superpower className="mt-4 md:mt-8" />
 
         {/* Always stacked on mobile, so the arrangement never depends on
-            whether the labels fit in 250px */}
-        <div className="flex w-[250px] flex-col items-center gap-2 sm:w-auto sm:flex-row sm:flex-wrap sm:justify-center">
-          <Button asChild>
+            whether the labels fit in 170px */}
+        <div className="grid w-[170px] gap-2 sm:w-auto sm:auto-cols-fr sm:grid-flow-col">
+          <Button asChild className="sm:px-2">
             <a href="#contact">
               <ToneText
                 text={byTone("contactButton")}
@@ -128,7 +128,7 @@ export function HeroSection() {
             variant={isCasual ? "link" : "outline"}
             // The link variant has no border; a transparent one keeps its
             // box identical to the outline one
-            className={cn(isCasual && "border border-transparent")}
+            className={cn("sm:px-2", isCasual && "border border-transparent")}
           >
             <a href="/SergeyZolotkoResume.pdf" download>
               <ToneText
