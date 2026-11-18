@@ -19,7 +19,7 @@ export const en: TranslationData = {
   summary: {
     title: "Summary",
     briefIntro:
-      "Educated business analyst now reconverting in web development. Responsible, teamwork-oriented, meticulous but flexible. Five+ years of experience working as an analyst in both small businesses and major corporations equipped me with skills in budget planning, building complex financial and marketing models. Paired with strong technical skills rooted in an engineer education and an intensive coding boot camp, I'm ready to start working in a team as a junior developer.",
+      "Well-educated business analyst now reconverting in web development. Five+ years of experience in both small businesses and major corporations. Skilled in budget planning, building complex financial and marketing models.",
   },
   experience: {
     title: "Work Experience",
@@ -136,7 +136,7 @@ export const en: TranslationData = {
     description: "Academic background and qualifications",
     education: [
       {
-        degree: "Specialist Diploma in Transport Machines Engineering",
+        degree: "Transport Machines Engineering",
         institution: "Bauman Moscow State Technical University",
         period: "09/2007 - 07/2013",
         description: [
@@ -145,10 +145,10 @@ export const en: TranslationData = {
           "Trained in transportation infrastructure solutions, material handling machines and continuous transportation machines design",
         ],
         shortDescription:
-          "5 year and 10 month Programme, equivalent to a Master's degree, solid foundation in engineering and programming",
+          "5 year and 10 month Programme, Specialist Diploma equivalent to a Master's degree, solid foundation in engineering and programming",
       },
       {
-        degree: "Specialist Diploma in Enterprise Management and Economics",
+        degree: "Enterprise Management and Economics",
         institution: "Bauman Moscow State Technical University",
         period: "09/2007 - 07/2013",
         description: [
@@ -157,7 +157,7 @@ export const en: TranslationData = {
           "Trained in management of industrial and tech enterprises",
         ],
         shortDescription:
-          "5 year Programme, training in management and economics of industrial and tech enterprises",
+          "5 year Programme, Specialist Diploma, training in management and economics of industrial and tech enterprises",
       },
     ],
   },
@@ -242,12 +242,12 @@ export const en: TranslationData = {
   },
   about: {
     title: "About Me",
-    description: "",
+    description: "Responsible, teamwork-oriented, meticulous but flexible. ",
     cards: [
       {
         title: "Career Goal",
         content:
-          "I am looking for a position as a junior developer in a team of professionals. I want to work on interesting projects, learn from my colleagues, and grow as a developer.",
+          "Paired with strong technical skills rooted in an engineer education and an intensive coding boot camp, I'm ready to start working in a team as a software developer.",
       },
       {
         title: "What I Offer",
