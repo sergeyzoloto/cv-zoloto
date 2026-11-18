@@ -57,7 +57,7 @@ export function SummarySection() {
 
   // Render brief intro card
   const renderBriefIntroCard = () => (
-    <Card className="flex-[6_0_24rem]">
+    <Card className="md:col-span-2">
       <CardContent>
         <p className="text-base xl:text-xl">{summaryData.briefIntro}</p>
       </CardContent>
@@ -66,7 +66,7 @@ export function SummarySection() {
 
   // Render skills card
   const renderSkillsCard = () => (
-    <Card className="flex-[1_0_14rem] overflow-x-hidden">
+    <Card className="overflow-x-hidden md:col-span-2">
       <CardHeader>
         <CardTitle>{skillsData.title}</CardTitle>
       </CardHeader>
@@ -86,27 +86,26 @@ export function SummarySection() {
 
   // Render education card
   const renderEducationCard = () => (
-    <Card className="flex-[2_0_14rem]">
+    <Card className="md:col-start-3 md:row-span-2 md:row-start-1">
       <CardHeader>
         <CardTitle>{educationData.title}</CardTitle>
       </CardHeader>
       <CardContent>
-        <ul className="space-y-1">
+        <ul className="flex flex-col gap-8">
           {educationData.education.map((edu, index) => (
             <li
               key={`summary-edu-${index}`}
-              className="text-sm flex flex-col gap-2 mb-8 last:mb-0"
+              className="text-sm flex flex-col gap-2"
             >
-              <div className="flex flex-row justify-between gap-2">
-                <p className="font-bold">{edu.degree}</p>
-                <div className="flex gap-2 flex-col ">
-                  <Badge variant="outline" className="w-fit h-fit">
-                    {edu.period.split(" - ")[0]}
-                  </Badge>
-                  <Badge variant="outline" className="w-fit h-fit">
-                    {edu.period.split(" - ")[1]}
-                  </Badge>
-                </div>
+              <p className="font-bold">{edu.degree}</p>
+              <div className="flex flex-row items-center gap-2">
+                <Badge variant="outline" className="w-fit h-fit">
+                  {edu.period.split(" - ")[0]}
+                </Badge>
+                <span aria-hidden>-</span>
+                <Badge variant="outline" className="w-fit h-fit">
+                  {edu.period.split(" - ")[1]}
+                </Badge>
               </div>
               <p>{edu.shortDescription}</p>
             </li>
@@ -144,8 +143,10 @@ export function SummarySection() {
   return (
     <Section id="summary" title={summaryData.title}>
       <div className="flex flex-col justify-center overflow-x-hidden mb-20 lg:mb-4">
-        {/* Top row with Brief Intro, Skills, and Education cards */}
-        <div className="flex flex-row flex-wrap gap-4 mb-4">
+        {/* Same three columns as the experience row below: intro and skills
+            stacked over two columns, education alone in the third, as tall
+            as both */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
           {renderBriefIntroCard()}
           {renderEducationCard()}
           {renderSkillsCard()}
