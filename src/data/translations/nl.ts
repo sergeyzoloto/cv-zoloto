@@ -163,116 +163,116 @@ export const nl: TranslationData = {
     technicalSkillsTitle: "Technische Vaardigheden",
     softSkillsTitle: "Soft Skills",
     skillSet: [
-      "HTML, CSS, JS",
-      "MongoDB, Express, React, Node",
-      "SQL, Python (pandas)",
-      "Budgetplanning",
+      "JS, TS, React, Node",
+      "MongoDB, Express, SQL, Python",
+      "Planning",
+      "Modellering",
       "Zelfstandig",
       "Snel lerend",
       "Aanpassingsvermogen",
     ],
     technicalSkills: [
       {
-        name: "MERN Stack",
+        name: "#techie",
         level: "Gevorderd",
-        proficiency: 80,
+        proficiency: 85,
         description:
-          "Ervaring met bouwen van webapplicaties met MongoDB, Express, React en Node.js. Kennis van REST API’s en authenticatie.",
+          "Geen doorsnee beginner in de IT. Ik hoef niet van nul af aan opgeleid te worden: ik ben thuis in git, GitHub, Docker, Linux enz. Nieuwe technologie leer ik altijd snel — zeg maar wat je nodig hebt.",
       },
       {
         name: "Databases",
         level: "Uitstekend",
-        proficiency: 95,
+        proficiency: 90,
         description:
-          "Veel ervaring met relationele databases. Complexe SQL-query’s schrijven en prestaties optimaliseren. Bekend met MongoDB, TransactSQL en Teradata.",
+          "Mijn grootste troef is mijn jarenlange ervaring met relationele databases. Ervaring met TransactSQL, Teradata en ook MongoDB. Bedreven in complexe query’s schrijven en prestaties optimaliseren.",
       },
       {
-        name: "Programmeren",
-        level: "Gemiddeld",
-        proficiency: 65,
+        name: "Engineering",
+        level: "Gevorderd",
+        proficiency: 80,
         description:
-          "Technische achtergrond in verschillende talen zoals Pascal, C, VBA en Python. Huidige interesse in fintech en Java.",
+          "Ingenieur uit opleiding en roeping, met ervaring in meerdere programmeertalen: Pascal op school en C op de universiteit, VBA en Python in mijn werk. Mijn hoofdstack was MERN en Java, waarmee ik webapplicaties bouwde. Ervaring met REST API’s en authenticatie.",
       },
       {
         name: "Engels",
-        level: "Gevorderd (C1)",
-        proficiency: 80,
-        description: "Vloeiend in lezen, schrijven en spreken.",
+        level: "Gevorderd",
+        proficiency: 75,
+        description: "Vloeiend in lezen, schrijven en spreken (C1).",
       },
     ],
     softSkills: [
       {
         name: "Analytisch vermogen",
         description:
-          "Systematisch denken, probleemoplossend werken, aandacht voor details, ervaring met datamodellering.",
+          "Systematisch, analytisch en kritisch denken. Bijzondere aandacht voor details.",
       },
       {
         name: "Mensgericht",
         description:
-          "Focus op de behoeften van mensen, klanten en belanghebbenden bij ontwerp en werkprocessen.",
+          "De focus verschuift van technologie naar wat mensen, belanghebbenden en klanten nodig hebben.",
       },
       {
         name: "Generalist",
         description:
-          "Snel lerend, flexibel en nieuwsgierig naar verschillende rollen en processen binnen bedrijven.",
+          "Snel lerend en probeert verschillende rollen uit om beter te begrijpen hoe jouw bedrijf werkt.",
       },
       {
         name: "Goede collega",
         description:
-          "Gevoelig, empathisch, nauwkeurig, met humor. Flexibele samenwerking met collega's.",
+          "Gevoelig, empathisch, nauwkeurig, maar met humor. Verantwoordelijke en betrouwbare teamspeler.",
       },
       {
         name: "Procesgericht",
         description:
-          "Sterk in betrouwbare resultaten leveren, met focus op procesoptimalisatie.",
+          "Rationele focus op resultaten, betrouwbaarheid en verantwoordelijkheidsgevoel.",
       },
       {
         name: "Financiële expertise",
         description:
-          "Financiële kennis als basis voor efficiënte werkprocessen en bedrijfsstructuren.",
+          "Specifieke blik en mindset gericht op het bouwen van efficiënte processen. Amen.",
       },
     ],
     introduction:
-      "Financiële planning en ad-hoc analyses vereisen goede communicatie, zowel telefonisch als per e-mail.",
+      "Financiële planning en ad-hoc analyses vragen veel communicatie. Ik moest leren om problemen telefonisch te achterhalen en afspraken per e-mail te bevestigen.",
   },
   about: {
     title: "Over Mij",
-    description: "",
+    description: "Verantwoordelijk, teamgericht, nauwkeurig maar flexibel. ",
     cards: [
       {
         title: "Carrièredoel",
         content:
-          "Ik zoek een positie als junior ontwikkelaar binnen een professioneel team. Ik wil leren en groeien binnen uitdagende projecten.",
+          "Met sterke technische vaardigheden, gebaseerd op een ingenieursopleiding en een intensieve coding bootcamp, ben ik klaar om in een team aan de slag te gaan als softwareontwikkelaar.",
       },
       {
         title: "Wat ik bied",
         content: [
-          "betrokkenheid bij bedrijfsbehoeften",
-          "technisch inzicht en brede visie",
-          "klantgerichtheid en bewezen probleemoplossend vermogen",
+          "responsieve houding met oog voor de behoeften van het bedrijf",
+          "uitstekende balans tussen technisch inzicht en brede kijk",
+          "klantgerichtheid, bewezen trackrecord in probleemoplossing en conflictbeheersing",
         ],
         isListContent: true,
       },
       {
         title: "Wat ik zoek",
         content: [
-          "uitdagende projecten en doelen",
-          "balans tussen zelfstandig werken en samenwerken",
-          "organisatie die groei en leren stimuleert",
+          "uitdagende projecten, ambitieuze doelen, samenwerkingsgerichte omgeving",
+          "balans tussen zelfstandig werken, teamwerk en cross-functionele samenwerking",
+          "organisatie die een groeimindset stimuleert en een cultuur van uitproberen en falen koestert",
         ],
         isListContent: true,
       },
       {
         title: "Persoonlijke interesses",
         content:
-          "Gedetailleerde gezinsfinanciën beheren, werken met To Do en Trello, gymnastiek sinds 2016, fietsen, reizen, films, muziek, bordspellen en cocktailcultuur.",
+          "Ik beheer gedetailleerd de gezinsfinanciën, gebruik To Do en Trello voor persoonlijke organisatie en ben ook een gymrat. Ik hou van fietsen, reizen, films, muziek, bordspellen en cocktailcultuur.",
       },
     ],
     interests: [
       { tag: "#workout" },
-      { tag: "#cycling" },
-      { tag: "#travel" },
-      { tag: "#boardgames" },
+      { tag: "#sociale wetenschappen" },
+      { tag: "#gaming" },
+      { tag: "#quizzen" },
     ],
   },
   contact: {
