@@ -32,7 +32,8 @@ function measureHero(canvasElement: HTMLElement) {
   if (!hero) throw new Error("#hero not rendered");
   const parts = {
     section: hero,
-    name: hero.querySelector(".title"),
+    roleLeft: hero.querySelectorAll(".hero-role")[0],
+    roleRight: hero.querySelectorAll(".hero-role")[1],
     subtitle: hero.querySelector(".subtitle"),
     contact: hero.querySelector('a[href="#contact"]'),
     download: hero.querySelector("a[download]"),
@@ -60,7 +61,7 @@ async function settled() {
 
 /**
  * Switches tone in place, like the header toggle, and asserts that the
- * section, name, subtitle, buttons and photo keep their boxes (±1px) and that
+ * section, roles, tagline, buttons and photo keep their boxes (±1px) and that
  * only the active copy is exposed to assistive technology.
  */
 export const ToneSwitchKeepsGeometry: Story = {

@@ -4,6 +4,13 @@ export const nl: TranslationData = {
   profile: {
     name: "Sergey\u00A0Zolotko",
     title: "Analist-ontwikkelaar gevestigd in\u00A0Nederland",
+    roleLeft: "analist",
+    roleRight: "ontwikkelaar",
+    superpowers: [
+      "Mijn superkracht is problemen oplossen",
+      "Mijn superkracht is rommelige data omzetten in heldere beslissingen",
+      "Mijn superkracht is snel leren en dingen opleveren",
+    ],
     profileImage: "/profile-pic.jpg",
     contactButton: "Neem contact op",
     downloadButton: "Download CV",

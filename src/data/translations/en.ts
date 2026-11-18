@@ -4,6 +4,13 @@ export const en: TranslationData = {
   profile: {
     name: "Sergey\u00A0Zolotko",
     title: "Analyst-Developer based in\u00A0The\u00A0Netherlands",
+    roleLeft: "analyst",
+    roleRight: "developer",
+    superpowers: [
+      "My superpower is solving problems",
+      "My superpower is turning messy data into clear decisions",
+      "My superpower is learning fast and shipping things",
+    ],
     profileImage: "/profile-pic.jpg",
     contactButton: "Contact Me",
     downloadButton: "Download CV",
