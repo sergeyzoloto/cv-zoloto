@@ -96,7 +96,7 @@ export function HeroSection() {
           </p>
         </div>
 
-        <Superpower className="mt-4 md:mt-8" />
+        <Superpower className="mt-1 md:mt-3" />
 
         {/* Always stacked on mobile, so the arrangement never depends on
             whether the labels fit in 170px */}
