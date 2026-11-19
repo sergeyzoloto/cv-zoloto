@@ -168,8 +168,15 @@
 .section-container {
   margin-top: 40px;
   margin-bottom: 40px;
-  max-height: calc(100vh - 40px * 2);
-  min-height: calc(100vh - 40px * 2);
+}
+
+/* Fixed-height, internally scrolling sections only on desktop; on mobile the
+   page itself scrolls. */
+@media (min-width: 1024px) {
+  .section-container {
+    max-height: calc(100vh - 40px * 2);
+    min-height: calc(100vh - 40px * 2);
+  }
 }
 
 /* Safety net for casual tone: this file is imported unlayered, so the rule

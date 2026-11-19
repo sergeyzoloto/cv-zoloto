@@ -42,7 +42,7 @@ export function SummarySection() {
           </p>
         </div>
       </CardHeader>
-      <CardContent className="overflow-y-auto max-h-full px-4">
+      <CardContent className="lg:overflow-y-auto max-h-full px-4">
         {/* Scrollable content */}
         <div className="space-y-4">
           <p className="text-sm mb-0">{experience.shortResponsibilities}</p>

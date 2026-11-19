@@ -26,7 +26,7 @@ export function ExperienceSection() {
   ) => (
     <Card
       key={`experience-${index}`}
-      className="overflow-y-auto h-full lg:h-auto flex-[3_1_300px] max-h-[calc(100vh-15rem)] transition-all duration-200 motion-reduce:transition-none hover:shadow-md hover:border-primary/40"
+      className="overflow-y-auto h-full lg:h-auto flex-[3_1_300px] lg:max-h-[calc(100vh-15rem)] transition-all duration-200 motion-reduce:transition-none hover:shadow-md hover:border-primary/40"
     >
       <CardHeader>
         <div className="flex flex-col gap-1">
@@ -39,7 +39,7 @@ export function ExperienceSection() {
           </p>
         </div>
       </CardHeader>
-      <CardContent className="overflow-y-auto px-4 text-sm xl:text-base">
+      <CardContent className="lg:overflow-y-auto px-4 text-sm xl:text-base">
         {/* Scrollable content */}
         <div className="px-2 space-y-4">
           <div>
