@@ -29,7 +29,7 @@ export function SummarySection() {
   ) => (
     <Card
       key={`summary-${index}`}
-      className="transition-all duration-200 motion-reduce:transition-none hover:-translate-y-0.5 hover:shadow-md hover:border-primary/40"
+      className="transition-all duration-200 motion-reduce:transition-none hover:shadow-md hover:border-primary/40"
     >
       <CardHeader>
         <div className="flex flex-col gap-1 w-full">
@@ -74,7 +74,7 @@ export function SummarySection() {
           <Badge
             key={`summary-skill-${index}`}
             variant="secondary"
-            className="w-fit h-fit mb-2 mr-2 last:mb-0 last:mr-0 text-sm px-3 py-1 rounded-md border border-transparent transition-colors hover:border-primary/50"
+            className="w-fit h-fit mb-2 mr-2 last:mb-0 last:mr-0 text-sm px-3 py-1 rounded-md border border-transparent transition-all duration-200 motion-reduce:transition-none hover:-translate-y-0.5 hover:border-primary/50 hover:bg-primary/10 hover:text-primary"
           >
             {skill}
           </Badge>
@@ -108,26 +108,35 @@ export function SummarySection() {
     </Card>
   );
 
+  // Casual: first sentence leads, the rest recedes
+  const introMatch = /^(.+?[.!?])\s+([\s\S]*)$/.exec(summaryData.briefIntro);
+  const lead = introMatch ? introMatch[1] : summaryData.briefIntro;
+  const rest = introMatch ? introMatch[2] : "";
+
   // Casual: one prose block instead of the card grid — the details live in
   // the experience, education and skills sections further down.
   if (isCasual) {
     return (
       <Section id="summary" title={summaryData.title}>
-        <div className="w-full max-w-[65ch] mx-auto sm:mx-0 space-y-8">
-          <p className="text-lg sm:text-xl lg:text-2xl leading-relaxed">
-            {summaryData.briefIntro}
-          </p>
-          <Reveal delayMs={160} className="flex flex-wrap gap-2">
-            {skillsData.skillSet.map((skill, index) => (
-              <Badge
-                key={`summary-skill-${index}`}
-                variant="outline"
-                className="text-base px-4 py-1.5"
-              >
-                {skill}
-              </Badge>
-            ))}
+        <div className="w-full mx-auto sm:mx-0 lg:grid lg:grid-cols-[1.4fr_1fr] lg:gap-12 space-y-8 lg:space-y-0">
+          <Reveal className="border-l-2 border-primary/40 pl-6 max-w-[65ch]">
+            <p className="text-lg sm:text-xl lg:text-2xl leading-relaxed text-muted-foreground">
+              <span className="font-semibold text-foreground">{lead}</span>
+              {rest && ` ${rest}`}
+            </p>
           </Reveal>
+          <div className="flex flex-wrap content-start gap-2">
+            {skillsData.skillSet.map((skill, index) => (
+              <Reveal key={`summary-skill-${index}`} delayMs={160 + index * 40}>
+                <Badge
+                  variant="secondary"
+                  className="rounded-full border-0 bg-primary/10 text-primary text-base px-4 py-1.5 cursor-default transition-all duration-200 motion-reduce:transition-none hover:-translate-y-0.5 hover:scale-105 hover:bg-primary hover:text-primary-foreground hover:shadow-md hover:shadow-primary/30 active:scale-95"
+                >
+                  {skill}
+                </Badge>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </Section>
     );

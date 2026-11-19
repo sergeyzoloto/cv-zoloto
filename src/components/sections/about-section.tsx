@@ -18,11 +18,11 @@ export function AboutSection() {
     <Card
       key={`about-card-${index}`}
       className={cn(
-        "overflow-y-auto first:text-base first:xs:text-lg first:2xl:text-2xl transition-all duration-200 motion-reduce:transition-none hover:-translate-y-0.5 hover:shadow-md hover:border-primary/40",
+        "overflow-y-auto first:text-base first:xs:text-lg first:2xl:text-2xl transition-all duration-200 motion-reduce:transition-none hover:shadow-md hover:border-primary/40",
         // Lead card: accent stripe and a soft tint
         "first:border-l-4 first:border-l-primary first:bg-gradient-to-br first:from-primary/10 first:to-card",
         // Casual: the cards become plain prose blocks
-        "casual:overflow-visible casual:border-0 casual:bg-transparent casual:shadow-none casual:py-0 casual:[&>*]:px-0 casual:gap-3 casual:bg-none casual:border-l-0 casual:hover:translate-y-0 casual:hover:shadow-none",
+        "casual:overflow-visible casual:border-0 casual:bg-transparent casual:shadow-none casual:py-0 casual:[&>*]:px-0 casual:gap-3 casual:bg-none casual:border-l-0 casual:hover:shadow-none",
         index >= aboutData.cards.length - 2
           ? "flex-[1_1_auto] lg:flex-[1_1_48%]"
           : "flex-[1_1_auto]",

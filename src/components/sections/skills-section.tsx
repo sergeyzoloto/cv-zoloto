@@ -17,7 +17,7 @@ export function SkillsSection() {
   const technicalSkillsCard = (
     <Card
       key="technical-skills"
-      className="overflow-y-auto h-full lg:h-auto flex-[3_1_300px] max-h-[calc(100vh-15rem)] transition-all duration-200 motion-reduce:transition-none hover:-translate-y-0.5 hover:shadow-md hover:border-primary/40"
+      className="overflow-y-auto h-full lg:h-auto flex-[3_1_300px] max-h-[calc(100vh-15rem)] transition-all duration-200 motion-reduce:transition-none hover:shadow-md hover:border-primary/40"
     >
       <CardHeader>
         <CardTitle>{skillsData.technicalSkillsTitle}</CardTitle>
@@ -44,7 +44,7 @@ export function SkillsSection() {
   const softSkillsCard = (
     <Card
       key="soft-skills"
-      className="overflow-y-auto h-full lg:h-auto flex-[3_1_300px] max-h-[calc(100vh-15rem)] transition-all duration-200 motion-reduce:transition-none hover:-translate-y-0.5 hover:shadow-md hover:border-primary/40"
+      className="overflow-y-auto h-full lg:h-auto flex-[3_1_300px] max-h-[calc(100vh-15rem)] transition-all duration-200 motion-reduce:transition-none hover:shadow-md hover:border-primary/40"
     >
       <CardHeader>
         <CardTitle>{skillsData.softSkillsTitle}</CardTitle>
@@ -58,7 +58,7 @@ export function SkillsSection() {
             <div key={`soft-skill-${index}`} className="space-y-2">
               <Badge
                 variant="secondary"
-                className="w-full justify-center py-2 text-sm rounded-md"
+                className="w-full justify-center py-2 text-sm rounded-md border border-transparent transition-all duration-200 motion-reduce:transition-none hover:-translate-y-0.5 hover:border-primary/50 hover:bg-primary/10 hover:text-primary"
               >
                 {skill.name}
               </Badge>
@@ -121,7 +121,10 @@ export function SkillsSection() {
                   delayMs={index * 60}
                   className="space-y-1"
                 >
-                  <Badge variant="outline" className="text-base px-4 py-1.5">
+                  <Badge
+                    variant="secondary"
+                    className="text-base px-4 py-1.5 rounded-full border-0 bg-primary/10 text-primary cursor-default transition-all duration-200 motion-reduce:transition-none hover:-translate-y-0.5 hover:scale-105 hover:bg-primary hover:text-primary-foreground hover:shadow-md hover:shadow-primary/30 active:scale-95"
+                  >
                     {skill.name}
                   </Badge>
                   <p className="text-sm text-muted-foreground max-w-[65ch]">

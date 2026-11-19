@@ -21,7 +21,7 @@ export function EducationSection() {
   const educationCards = educationData.education.map((edu, index) => (
     <Card
       key={`education-${index}`}
-      className="overflow-y-auto flex-[1_1_300px] h-full lg:h-auto max-h-[calc(100vh-15rem)] transition-all duration-200 motion-reduce:transition-none hover:-translate-y-0.5 hover:shadow-md hover:border-primary/40"
+      className="overflow-y-auto flex-[1_1_300px] h-full lg:h-auto max-h-[calc(100vh-15rem)] transition-all duration-200 motion-reduce:transition-none hover:shadow-md hover:border-primary/40"
     >
       <CardHeader className="flex flex-row flex-wrap items-start justify-between gap-4">
         <div className="flex flex-row items-center gap-4 mb-2">
@@ -83,11 +83,11 @@ export function EducationSection() {
               className="relative pl-6 sm:pl-8 pb-10 last:pb-0 border-l border-border"
             >
               <span
-                className="absolute -left-[5px] top-1.5 h-2.5 w-2.5 rounded-full bg-primary"
+                className="absolute -left-[5px] top-1.5 h-2.5 w-2.5 rounded-full bg-primary ring-4 ring-primary/20"
                 aria-hidden="true"
               />
-              <p className="text-xs uppercase tracking-wide text-muted-foreground">
-                {edu.period}
+              <p className="font-mono text-xs text-muted-foreground">
+                {edu.period.replace(" - ", " → ")}
               </p>
               <h3 className="mt-1 text-lg sm:text-xl font-semibold">
                 {edu.degree}
