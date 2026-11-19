@@ -34,6 +34,8 @@
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^3.2.7",
+    "@emnapi/core": "^1.11.3",
+    "@emnapi/runtime": "^1.11.3",
     "@eslint/js": "^9.21.0",
     "@storybook/addon-essentials": "^8.6.14",
     "@storybook/addon-onboarding": "^8.6.18",
