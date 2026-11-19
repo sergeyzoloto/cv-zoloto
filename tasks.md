@@ -1,6 +1,6 @@
 # Task for Digital Resume Project
 
-## Status (2026-11-18)
+## Status (2026-11-19)
 
 Current focus: content rewrite + custom domain launch. Storybook stays part of the workflow — it's the right way to design and review components in isolation.
 
@@ -15,12 +15,12 @@ Tasks are prioritised with MoSCoW.
 - Storybook builds and all story tests pass; stories added for SummarySection and UI primitives
 - Add Summary Section to Storybook
 - Consolidate the hero section layout for different tone-of-voice modes
+- Rewrote content to make stories more personal (en/ru/nl, incl. `casual/`; key sets in sync)
 
 ## Must have — launch blockers
 
-1. Edit content to make stories more personal — rewrite en/ru/nl copy, incl. `casual/`; keep key sets in sync across languages.
-2. Update the PDF resume to match the new content (one per language if needed).
-3. Connect the custom domain in Cloudflare Pages (HTTPS, redirect from `*.pages.dev`).
+1. Update the PDF resume to match the new content (one per language if needed).
+2. Connect the custom domain in Cloudflare Pages (HTTPS, redirect from `*.pages.dev`).
 
 ## Should have — right after launch
 

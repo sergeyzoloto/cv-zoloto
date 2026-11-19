@@ -138,3 +138,15 @@
 
    - Link the "Download Resume" button to the resume file using an `<a>` tag with the `href` attribute pointing to `/SergeyZolotkoResume.pdf`.
    - Add the `download` attribute to ensure the file is downloaded instead of opened in the browser.
+
+### Task 16: Make the content more personal ✅
+
+**Goal**: Rewrite the copy so the stories read as personal, not generic.
+
+1. Rewrite the copy for every language:
+
+   - Update `en`, `ru` and `nl` translations, including the `casual/` overlay.
+
+2. Keep the translations consistent:
+
+   - Keep key sets in sync across all languages and both tones.
