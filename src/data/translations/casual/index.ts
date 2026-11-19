@@ -13,7 +13,7 @@ export const casualOverlays: Record<Language, CasualOverlay> = {
 /** Merge an overlay array over a base array, item by item, by index. */
 function mergeItems<TBase, TOverlay extends Partial<TBase>>(
   base: TBase[],
-  overlay?: TOverlay[]
+  overlay?: TOverlay[],
 ): TBase[] {
   if (!overlay) return base;
   return base.map((item, index) => ({ ...item, ...overlay[index] }));
@@ -27,7 +27,7 @@ function mergeItems<TBase, TOverlay extends Partial<TBase>>(
  */
 export function mergeCasual(
   base: TranslationData,
-  overlay: CasualOverlay
+  overlay: CasualOverlay,
 ): TranslationData {
   return {
     ...base,
@@ -43,7 +43,7 @@ export function mergeCasual(
       ...overlay.education,
       education: mergeItems(
         base.education.education,
-        overlay.education?.education
+        overlay.education?.education,
       ),
     },
     skills: {
@@ -51,9 +51,12 @@ export function mergeCasual(
       ...overlay.skills,
       technicalSkills: mergeItems(
         base.skills.technicalSkills,
-        overlay.skills?.technicalSkills
+        overlay.skills?.technicalSkills,
       ),
-      softSkills: mergeItems(base.skills.softSkills, overlay.skills?.softSkills),
+      softSkills: mergeItems(
+        base.skills.softSkills,
+        overlay.skills?.softSkills,
+      ),
     },
     about: {
       ...base.about,

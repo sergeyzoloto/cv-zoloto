@@ -7,5 +7,5 @@ import AppWrapper from "./AppWrapper.tsx";
 createRoot(document.getElementById("root")!).render(
   <AppWrapper>
     <App />
-  </AppWrapper>
+  </AppWrapper>,
 );

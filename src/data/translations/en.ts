@@ -4,6 +4,23 @@ export const en: TranslationData = {
   profile: {
     name: "Sergey\u00A0Zolotko",
     title: "Analyst-Developer based in\u00A0The\u00A0Netherlands",
+    roleLeft: "analyst",
+    roleRight: "developer",
+    superpowerLead: "My superpower is",
+    superpowers: [
+      "solving problems",
+      "turning messy data into clear decisions",
+      "learning fast and shipping things",
+      "empathy",
+      "broad expertise",
+      "an analytical mindset",
+      "critical thinking",
+      "working with relational databases",
+      "building complex models",
+      "strong technical skills",
+      "learning quickly",
+      "attention to detail",
+    ],
     profileImage: "/profile-pic.jpg",
     contactButton: "Contact Me",
     downloadButton: "Download CV",
@@ -11,7 +28,7 @@ export const en: TranslationData = {
   summary: {
     title: "Summary",
     briefIntro:
-      "Educated business analyst now reconverting in web development. Responsible, teamwork-oriented, meticulous but flexible. Five+ years of experience working as an analyst in both small businesses and major corporations equipped me with skills in budget planning, building complex financial and marketing models. Paired with strong technical skills rooted in an engineer education and an intensive coding boot camp, I'm ready to start working in a team as a junior developer.",
+      "Five+ years of experience in both small businesses and major corporations. Skilled in budget planning, building complex financial and marketing models.",
   },
   experience: {
     title: "Work Experience",
@@ -128,7 +145,7 @@ export const en: TranslationData = {
     description: "Academic background and qualifications",
     education: [
       {
-        degree: "Specialist Diploma in Transport Machines Engineering",
+        degree: "Transport Machines Engineering",
         institution: "Bauman Moscow State Technical University",
         period: "09/2007 - 07/2013",
         description: [
@@ -137,10 +154,10 @@ export const en: TranslationData = {
           "Trained in transportation infrastructure solutions, material handling machines and continuous transportation machines design",
         ],
         shortDescription:
-          "5 year and 10 month Programme, equivalent to a Master's degree, solid foundation in engineering and programming",
+          "5 year and 10 month Programme, Specialist Diploma equivalent to a Master's degree, solid foundation in engineering and programming",
       },
       {
-        degree: "Specialist Diploma in Enterprise Management and Economics",
+        degree: "Enterprise Management and Economics",
         institution: "Bauman Moscow State Technical University",
         period: "09/2007 - 07/2013",
         description: [
@@ -149,7 +166,7 @@ export const en: TranslationData = {
           "Trained in management of industrial and tech enterprises",
         ],
         shortDescription:
-          "5 year Programme, training in management and economics of industrial and tech enterprises",
+          "5 year Programme, Specialist Diploma, training in management and economics of industrial and tech enterprises",
       },
     ],
   },
@@ -159,87 +176,91 @@ export const en: TranslationData = {
     technicalSkillsTitle: "Technical Skills",
     softSkillsTitle: "Soft Skills",
     skillSet: [
-      "HTML, CSS, JS",
-      "MongoDB, Express, React, Node",
-      "SQL, Python (pandas)",
-      "Budget Planning",
+      "JavaScript",
+      "TypeScript",
+      "React",
+      "Node.js",
+      "MongoDB",
+      "SQL",
+      "Python",
+      "Planning",
+      "Budgeting",
+      "Modeling",
       "Independent",
-      "Fast learner",
       "Adaptive",
     ],
     technicalSkills: [
       {
-        name: "MERN Stack",
+        name: "#techie",
         level: "Advanced",
-        proficiency: 80,
+        proficiency: 85,
         description:
-          "My main stack was MERN, so I understand the JavaScript design best. Built web applications using MongoDB, Express, React, and Node.js. Experience with RESTful APIs and authentication.",
+          "Not just another newbie in the IT world. I don't need to be taught from scratch, I am proficient in git, GitHub. Docker, Linux, etc. I always manage to master new technology, just tell me what you need.",
       },
       {
         name: "Databases",
         level: "Excellent",
-        proficiency: 95,
+        proficiency: 90,
         description:
-          "My major advantage is my long experience with relational databases. I have written financial models using sequel alone, for which I have earned a reputation as a master of SQL among my colleagues. Experience with MongoDB, TransactSQL, and Teradata. Skilled in writing complex queries and optimizing performance.",
+          "My major advantage is my long experience with relational databases. Experience with TransactSQL, Teradata, also MongoDB. Skilled in writing complex queries and optimizing performance.",
       },
       {
-        name: "Programming",
-        level: "Intermediate",
-        proficiency: 65,
+        name: "Engineering",
+        level: "Advanced",
+        proficiency: 80,
         description:
-          "Not just another newbie in the IT world, I am a real tech guy. I have experience with several programming languages. Pascal in school and C in university. In my job, I have used VBA and Python to automate processes and SQL scripting to handle data. I have a great interest in fintech, so I am mastering Java. I don't need to be taught from scratch, I am proficient in git, GitHub. Docker, Linux, etc. I always manage to master new technology, just tell me what you need.",
+          "Engineer by education and calling, I have experience with several programming languages. Pascal in school and C in university, VBA and Python in my job. My main stack was MERN and Java, which I used to built web applications. Experience with RESTful APIs and authentication.",
       },
       {
         name: "English",
-        level: "Advanced (C1)",
-        proficiency: 80,
-        description: "Fluent in reading, writing, and speaking.",
+        level: "Advanced",
+        proficiency: 75,
+        description: "Fluent in reading, writing, and speaking (C1).",
       },
     ],
     softSkills: [
       {
         name: "Analytical approach",
         description:
-          "Systematic, analytical and critical thinking, problem-solving skills, data based modeling. Special attention to details as I know the importance of checking, testing, and validating data.",
+          "Systematic, analytical and critical thinking. Special attention to details.",
       },
       {
         name: "Human-oriented",
         description:
-          "At the heart of my approach are the principles and practices of human-centered design, which shifts the focus from technology to the needs of people, stakeholders and customers.",
+          "Focus shifted from technology to what people, stakeholders and customers need.",
       },
 
       {
         name: "Generalist",
         description:
-          "I am a fast learner, a generalist, and an experimentalist. I enjoy trying out different roles and gradually gaining a better understanding of how businesses operate.",
+          "Fast learner who tries out different roles to gain a better grasp of how your business operates.",
       },
       {
         name: "Real comrade",
         description:
-          "I'm sensitive, empathic, meticulous but humorous. My approach gives me more flexibility and makes it easier for me to find a common language with colleagues.",
+          "Sensitive, empathic, meticulous but humorous. Responsible and reliable team player.",
       },
       {
-        name: "Process-oriented",
-        description:
-          "My rational focus on results, reliability, and responsible attitude towards work says a lot about my productivity skills.",
+        name: "Independent",
+        description: "Able to work autonomously without constant supervision.",
       },
       {
         name: "Financial expertise",
         description:
-          "Experience in finance is not just a set of skills, it is a specific perspective and mindset aimed at building efficient processes. Amen.",
+          "Specific perspective and mindset aimed at building efficient processes and proved results.",
       },
     ],
     introduction:
-      "Making financial plans and conducting ad-hoc analytics requires a lot more communication than you first think it should. I had to learn how to use the phone to diagnose problems firsthand and how to confirm agreements by email.",
+      "Making financial plans and conducting ad-hoc analytics requires a lot of communication. I had to learn how to use the phone to diagnose problems firsthand and how to confirm agreements by email.",
   },
   about: {
     title: "About Me",
-    description: "",
+    description: "Responsible, teamwork-oriented, meticulous but flexible.",
     cards: [
       {
         title: "Career Goal",
         content:
-          "I am looking for a position as a junior developer in a team of professionals. I want to work on interesting projects, learn from my colleagues, and grow as a developer.",
+          "Well-educated analyst now reconverting in development. Paired with strong technical skills rooted in an engineer education and an intensive coding boot camp, I'm ready to start working in a team as a software developer.",
       },
       {
         title: "What I Offer",
@@ -262,14 +283,14 @@ export const en: TranslationData = {
       {
         title: "Personal Interests",
         content:
-          "I maintain detailed family finances, use To Do and Trello for personal organization, and have been practicing gymnastics since 2016. I enjoy cycling, traveling, movies, music, board games, and cocktail culture.",
+          "I maintain detailed family finances, use To Do and Trello for personal organization, also gym rat. I enjoy cycling, traveling, movies, music, board games, and cocktail culture.",
       },
     ],
     interests: [
       { tag: "#workout" },
-      { tag: "#cycling" },
-      { tag: "#travel" },
-      { tag: "#boardgames" },
+      { tag: "#social science" },
+      { tag: "#gaming" },
+      { tag: "#quizzes" },
     ],
   },
   contact: {

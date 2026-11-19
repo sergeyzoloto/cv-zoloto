@@ -1,5 +1,5 @@
 "use client";
-import { useTheme, toggleTheme } from "./theme-provider";
+import { useTheme, toggleTheme } from "./theme-context";
 import { Button } from "./ui/button";
 
 export function ModeToggle() {

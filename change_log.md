@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## 2026-11-19
+
+- Rewrote the en/ru/nl copy (including the casual overlay) to make the stories more personal; key sets stay in sync across languages
+
 ## 2026-09-19
 
 - Fixed the hero section jumping when the tone changes: one layout for both tones instead of formal-only viewport sizing, one title line-height, and the subtitle and button labels reserve room for their longer tone variant

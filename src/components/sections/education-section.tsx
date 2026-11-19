@@ -7,7 +7,6 @@ import {
   CardHeader,
   CardTitle,
 } from "../ui/card";
-import { Badge } from "../ui/badge";
 import { Section } from "../ui/section";
 import { Reveal } from "../ui/reveal";
 import { useContent } from "@/hooks/use-content";
@@ -22,7 +21,7 @@ export function EducationSection() {
   const educationCards = educationData.education.map((edu, index) => (
     <Card
       key={`education-${index}`}
-      className="overflow-y-auto flex-[1_1_300px] h-full lg:h-auto max-h-[calc(100vh-15rem)]"
+      className="overflow-y-auto flex-[1_1_300px] h-full lg:h-auto max-h-[calc(100vh-15rem)] transition-all duration-200 motion-reduce:transition-none hover:shadow-md hover:border-primary/40"
     >
       <CardHeader className="flex flex-row flex-wrap items-start justify-between gap-4">
         <div className="flex flex-row items-center gap-4 mb-2">
@@ -45,12 +44,14 @@ export function EducationSection() {
           </div>
           <div className="flex flex-col gap-2">
             <CardTitle>{edu.degree}</CardTitle>
-            <CardDescription>{edu.institution}</CardDescription>
+            <CardDescription className="text-primary font-medium">
+              {edu.institution}
+            </CardDescription>
+            <p className="font-mono text-xs text-muted-foreground">
+              {edu.period.replace(" - ", " → ")}
+            </p>
           </div>
         </div>
-        <Badge variant="outline" className="text-sm">
-          {edu.period}
-        </Badge>
       </CardHeader>
       <CardContent className="space-y-4">
         <div className="ml-auto"></div>
@@ -82,11 +83,11 @@ export function EducationSection() {
               className="relative pl-6 sm:pl-8 pb-10 last:pb-0 border-l border-border"
             >
               <span
-                className="absolute -left-[5px] top-1.5 h-2.5 w-2.5 rounded-full bg-primary"
+                className="absolute -left-[5px] top-1.5 h-2.5 w-2.5 rounded-full bg-primary ring-4 ring-primary/20"
                 aria-hidden="true"
               />
-              <p className="text-xs uppercase tracking-wide text-muted-foreground">
-                {edu.period}
+              <p className="font-mono text-xs text-muted-foreground">
+                {edu.period.replace(" - ", " → ")}
               </p>
               <h3 className="mt-1 text-lg sm:text-xl font-semibold">
                 {edu.degree}

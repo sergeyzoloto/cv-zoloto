@@ -1,21 +1,10 @@
 "use client";
 
 import type React from "react";
-import { createContext, useContext, useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import type { Language } from "@/types/language";
 import { useBrowserLanguage } from "@/hooks/use-browser-language";
-
-interface LanguageContextType {
-  language: Language;
-  setLanguage: (language: Language) => void;
-}
-
-const defaultLanguage: Language = "en";
-
-const LanguageContext = createContext<LanguageContextType>({
-  language: defaultLanguage,
-  setLanguage: () => {},
-});
+import { LanguageContext, defaultLanguage } from "./language-context";
 
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const detectedLanguage = useBrowserLanguage(defaultLanguage);
@@ -58,5 +47,3 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     </LanguageContext.Provider>
   );
 }
-
-export const useLanguage = () => useContext(LanguageContext);

@@ -1,6 +1,14 @@
 export interface ProfileTranslation {
   name: string;
   title: string;
+  /** Hero: the two roles flanking the photo, left then right. */
+  roleLeft: string;
+  roleRight: string;
+  /** Hero: the fixed first part of the line under the photo. */
+  superpowerLead: string;
+  /** Hero: candidate endings of that line, typed out after the lead; one is
+   *  picked per page load. */
+  superpowers: string[];
   profileImage: string;
   contactButton: string;
   downloadButton: string;

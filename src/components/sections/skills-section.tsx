@@ -17,7 +17,7 @@ export function SkillsSection() {
   const technicalSkillsCard = (
     <Card
       key="technical-skills"
-      className="overflow-y-auto h-full lg:h-auto flex-[3_1_300px] max-h-[calc(100vh-15rem)]"
+      className="overflow-y-auto h-full lg:h-auto flex-[3_1_300px] max-h-[calc(100vh-15rem)] transition-all duration-200 motion-reduce:transition-none hover:shadow-md hover:border-primary/40"
     >
       <CardHeader>
         <CardTitle>{skillsData.technicalSkillsTitle}</CardTitle>
@@ -44,7 +44,7 @@ export function SkillsSection() {
   const softSkillsCard = (
     <Card
       key="soft-skills"
-      className="overflow-y-auto h-full lg:h-auto flex-[3_1_300px] max-h-[calc(100vh-15rem)]"
+      className="overflow-y-auto h-full lg:h-auto flex-[3_1_300px] max-h-[calc(100vh-15rem)] transition-all duration-200 motion-reduce:transition-none hover:shadow-md hover:border-primary/40"
     >
       <CardHeader>
         <CardTitle>{skillsData.softSkillsTitle}</CardTitle>
@@ -56,7 +56,10 @@ export function SkillsSection() {
         <div className="grid grid-cols-1 xs:grid-cols-2 gap-4">
           {skillsData.softSkills.map((skill, index) => (
             <div key={`soft-skill-${index}`} className="space-y-2">
-              <Badge className="w-full justify-center py-1.5">
+              <Badge
+                variant="secondary"
+                className="w-full justify-center py-2 text-sm rounded-md border border-transparent transition-all duration-200 motion-reduce:transition-none hover:-translate-y-0.5 hover:border-primary/50 hover:bg-primary/10 hover:text-primary"
+              >
                 {skill.name}
               </Badge>
               <p className="text-sm text-muted-foreground text-center">
@@ -96,7 +99,7 @@ export function SkillsSection() {
                 </div>
                 <Progress value={skill.proficiency || 50} />
                 {skill.description && (
-                  <p className="text-sm text-muted-foreground max-w-[65ch]">
+                  <p className="text-sm leading-relaxed text-muted-foreground max-w-[65ch]">
                     {skill.description}
                   </p>
                 )}
@@ -104,24 +107,27 @@ export function SkillsSection() {
             ))}
           </div>
 
-          <div className="space-y-6">
+          <div className="space-y-8">
             <h3 className="text-lg sm:text-xl font-semibold">
               {skillsData.softSkillsTitle}
             </h3>
-            <p className="text-sm sm:text-base text-muted-foreground max-w-[65ch]">
+            <p className="text-sm sm:text-base leading-relaxed text-muted-foreground max-w-[65ch]">
               {skillsData.introduction}
             </p>
-            <div className="space-y-4">
+            <div className="space-y-10">
               {skillsData.softSkills.map((skill, index) => (
                 <Reveal
                   key={`casual-soft-skill-${index}`}
                   delayMs={index * 60}
-                  className="space-y-1"
+                  className="space-y-3"
                 >
-                  <Badge variant="outline" className="text-sm px-3 py-1">
+                  <Badge
+                    variant="secondary"
+                    className="text-base px-4 py-1.5 rounded-full border-0 bg-primary/10 text-primary cursor-default transition-all duration-200 motion-reduce:transition-none hover:-translate-y-0.5 hover:scale-105 hover:bg-primary hover:text-primary-foreground hover:shadow-md hover:shadow-primary/30 active:scale-95"
+                  >
                     {skill.name}
                   </Badge>
-                  <p className="text-sm text-muted-foreground max-w-[65ch]">
+                  <p className="text-sm leading-relaxed text-muted-foreground max-w-[65ch]">
                     {skill.description}
                   </p>
                 </Reveal>

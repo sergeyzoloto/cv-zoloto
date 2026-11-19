@@ -3,7 +3,7 @@ import { Footer } from "../components/footer";
 import { Header } from "../components/header";
 import { ThemeProvider } from "../components/theme-provider";
 import { ToneProvider } from "../components/tone-provider";
-import { ScrollProvider } from "../context/scroll-context";
+import { ScrollProvider } from "../context/scroll-provider";
 import { useTone } from "@/context/tone-context";
 
 import { usePageTitle } from "@/hooks/use-page-title";

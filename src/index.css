@@ -11,6 +11,7 @@
 
 @layer base {
   .dark {
+    color-scheme: dark;
     --color-background: rgba(12, 14, 28, 1);
     --color-foreground: rgba(245, 247, 255, 1);
     --color-card: rgba(12, 14, 28, 1);

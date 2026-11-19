@@ -46,7 +46,7 @@ export function useInView<T extends Element>({
       },
       // The viewport is the right root in both tones: IntersectionObserver
       // already clips the intersection rect by ancestor overflow.
-      { root: null, rootMargin, threshold }
+      { root: null, rootMargin, threshold },
     );
 
     observer.observe(element);

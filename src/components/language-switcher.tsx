@@ -18,12 +18,12 @@ export function LanguageSwitcher() {
   // Find the current language option
 
   return (
-    <DropdownMenu>
+    <DropdownMenu modal={false}>
       <DropdownMenuTrigger asChild>
         <Button
           variant="ghost"
           size="sm"
-          className="relative"
+          className="relative focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:outline-none"
           aria-label="Select language"
         >
           <LanguageIndicator />

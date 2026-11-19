@@ -18,16 +18,18 @@ export function AboutSection() {
     <Card
       key={`about-card-${index}`}
       className={cn(
-        "overflow-y-auto first:text-base first:xs:text-lg first:2xl:text-2xl",
+        "overflow-y-auto first:text-base first:xs:text-lg first:2xl:text-2xl transition-all duration-200 motion-reduce:transition-none hover:shadow-md hover:border-primary/40",
+        // Lead card: accent stripe and a soft tint
+        "first:border-l-4 first:border-l-primary first:bg-gradient-to-br first:from-primary/10 first:to-card",
         // Casual: the cards become plain prose blocks
-        "casual:overflow-visible casual:border-0 casual:bg-transparent casual:shadow-none casual:py-0 casual:[&>*]:px-0 casual:gap-3",
+        "casual:overflow-visible casual:border-0 casual:bg-transparent casual:shadow-none casual:py-0 casual:[&>*]:px-0 casual:gap-3 casual:hover:shadow-none casual:first:bg-none casual:first:border-l-0",
         index >= aboutData.cards.length - 2
           ? "flex-[1_1_auto] lg:flex-[1_1_48%]"
-          : "flex-[1_1_auto]"
+          : "flex-[1_1_auto]",
       )} // Adjust width for the last two cards
     >
       <CardHeader>
-        <CardTitle>{card.title}</CardTitle>
+        <CardTitle className="text-primary">{card.title}</CardTitle>
       </CardHeader>
       <CardContent>
         {card.isListContent ? (

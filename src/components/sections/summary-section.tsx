@@ -25,24 +25,21 @@ export function SummarySection() {
   // Render summary cards
   const renderExperienceCard = (
     experience: (typeof experienceData.items)[0],
-    index: number
+    index: number,
   ) => (
-    <Card key={`summary-${index}`}>
+    <Card
+      key={`summary-${index}`}
+      className="transition-all duration-200 motion-reduce:transition-none hover:shadow-md hover:border-primary/40"
+    >
       <CardHeader>
-        <div className="flex flex-row w-full items-start md:justify-between gap-4">
-          <div className="flex flex-col gap-2 w-full">
-            <CardTitle>{experience.company}</CardTitle>
-            <CardDescription>{experience.position}</CardDescription>
-          </div>
-          <div className="flex gap-2 flex-col sm:flex-row md:flex-col lg:flex-row">
-            <Badge variant="outline" className="w-fit h-fit">
-              {experience.period.split(" - ")[0]}
-            </Badge>
-            <p className="hidden sm:block md:hidden lg:block">-</p>
-            <Badge variant="outline" className="w-fit h-fit">
-              {experience.period.split(" - ")[1]}
-            </Badge>
-          </div>
+        <div className="flex flex-col gap-1 w-full">
+          <CardTitle>{experience.company}</CardTitle>
+          <CardDescription className="text-primary font-medium">
+            {experience.position}
+          </CardDescription>
+          <p className="font-mono text-xs text-muted-foreground">
+            {experience.period.replace(" - ", " → ")}
+          </p>
         </div>
       </CardHeader>
       <CardContent className="overflow-y-auto max-h-full px-4">
@@ -57,16 +54,18 @@ export function SummarySection() {
 
   // Render brief intro card
   const renderBriefIntroCard = () => (
-    <Card className="flex-[6_0_24rem]">
+    <Card className="md:col-span-2 border-l-4 border-l-primary bg-gradient-to-br from-primary/10 to-card">
       <CardContent>
-        <p className="text-base xl:text-xl">{summaryData.briefIntro}</p>
+        <p className="text-base xl:text-xl font-medium">
+          {summaryData.briefIntro}
+        </p>
       </CardContent>
     </Card>
   );
 
   // Render skills card
   const renderSkillsCard = () => (
-    <Card className="flex-[1_0_14rem] overflow-x-hidden">
+    <Card className="overflow-x-hidden md:col-span-2">
       <CardHeader>
         <CardTitle>{skillsData.title}</CardTitle>
       </CardHeader>
@@ -74,8 +73,8 @@ export function SummarySection() {
         {skillsData.skillSet.map((skill, index) => (
           <Badge
             key={`summary-skill-${index}`}
-            variant="outline"
-            className="w-fit h-fit mb-2 mr-2 last:mb-0 last:mr-0"
+            variant="secondary"
+            className="w-fit h-fit mb-2 mr-2 last:mb-0 last:mr-0 text-sm px-3 py-1 rounded-md border border-transparent transition-all duration-200 motion-reduce:transition-none hover:-translate-y-0.5 hover:border-primary/50 hover:bg-primary/10 hover:text-primary"
           >
             {skill}
           </Badge>
@@ -86,28 +85,21 @@ export function SummarySection() {
 
   // Render education card
   const renderEducationCard = () => (
-    <Card className="flex-[2_0_14rem]">
+    <Card className="md:col-start-3 md:row-span-2 md:row-start-1">
       <CardHeader>
         <CardTitle>{educationData.title}</CardTitle>
       </CardHeader>
       <CardContent>
-        <ul className="space-y-1">
+        <ul className="flex flex-col divide-y divide-border">
           {educationData.education.map((edu, index) => (
             <li
               key={`summary-edu-${index}`}
-              className="text-sm flex flex-col gap-2 mb-8 last:mb-0"
+              className="text-sm flex flex-col gap-2 py-4 first:pt-0 last:pb-0"
             >
-              <div className="flex flex-row justify-between gap-2">
-                <p className="font-bold">{edu.degree}</p>
-                <div className="flex gap-2 flex-col ">
-                  <Badge variant="outline" className="w-fit h-fit">
-                    {edu.period.split(" - ")[0]}
-                  </Badge>
-                  <Badge variant="outline" className="w-fit h-fit">
-                    {edu.period.split(" - ")[1]}
-                  </Badge>
-                </div>
-              </div>
+              <p className="font-bold">{edu.degree}</p>
+              <p className="font-mono text-xs text-muted-foreground">
+                {edu.period.replace(" - ", " → ")}
+              </p>
               <p>{edu.shortDescription}</p>
             </li>
           ))}
@@ -116,26 +108,35 @@ export function SummarySection() {
     </Card>
   );
 
+  // Casual: first sentence leads, the rest recedes
+  const introMatch = /^(.+?[.!?])\s+([\s\S]*)$/.exec(summaryData.briefIntro);
+  const lead = introMatch ? introMatch[1] : summaryData.briefIntro;
+  const rest = introMatch ? introMatch[2] : "";
+
   // Casual: one prose block instead of the card grid — the details live in
   // the experience, education and skills sections further down.
   if (isCasual) {
     return (
       <Section id="summary" title={summaryData.title}>
-        <div className="w-full max-w-[65ch] mx-auto sm:mx-0 space-y-8">
-          <p className="text-lg sm:text-xl lg:text-2xl leading-relaxed">
-            {summaryData.briefIntro}
-          </p>
-          <Reveal delayMs={160} className="flex flex-wrap gap-2">
-            {skillsData.skillSet.map((skill, index) => (
-              <Badge
-                key={`summary-skill-${index}`}
-                variant="outline"
-                className="text-sm px-3 py-1"
-              >
-                {skill}
-              </Badge>
-            ))}
+        <div className="w-full mx-auto sm:mx-0 lg:grid lg:grid-cols-[1.4fr_1fr] lg:gap-12 space-y-8 lg:space-y-0">
+          <Reveal className="border-l-2 border-primary/40 pl-6 max-w-[65ch]">
+            <p className="text-lg sm:text-xl lg:text-2xl leading-relaxed text-muted-foreground">
+              <span className="font-semibold text-foreground">{lead}</span>
+              {rest && ` ${rest}`}
+            </p>
           </Reveal>
+          <div className="flex flex-wrap content-start gap-2">
+            {skillsData.skillSet.map((skill, index) => (
+              <Reveal key={`summary-skill-${index}`} delayMs={160 + index * 40}>
+                <Badge
+                  variant="secondary"
+                  className="rounded-full border-0 bg-primary/10 text-primary text-base px-4 py-1.5 cursor-default transition-all duration-200 motion-reduce:transition-none hover:-translate-y-0.5 hover:scale-105 hover:bg-primary hover:text-primary-foreground hover:shadow-md hover:shadow-primary/30 active:scale-95"
+                >
+                  {skill}
+                </Badge>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </Section>
     );
@@ -144,8 +145,10 @@ export function SummarySection() {
   return (
     <Section id="summary" title={summaryData.title}>
       <div className="flex flex-col justify-center overflow-x-hidden mb-20 lg:mb-4">
-        {/* Top row with Brief Intro, Skills, and Education cards */}
-        <div className="flex flex-row flex-wrap gap-4 mb-4">
+        {/* Same three columns as the experience row below: intro and skills
+            stacked over two columns, education alone in the third, as tall
+            as both */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
           {renderBriefIntroCard()}
           {renderEducationCard()}
           {renderSkillsCard()}

@@ -37,7 +37,7 @@ export function ToneProvider({
         setTone(tone);
       },
     }),
-    [tone, storageKey]
+    [tone, storageKey],
   );
 
   return (
