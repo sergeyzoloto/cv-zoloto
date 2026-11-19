@@ -99,7 +99,7 @@ export function SkillsSection() {
                 </div>
                 <Progress value={skill.proficiency || 50} />
                 {skill.description && (
-                  <p className="text-sm text-muted-foreground max-w-[65ch]">
+                  <p className="text-sm leading-relaxed text-muted-foreground max-w-[65ch]">
                     {skill.description}
                   </p>
                 )}
@@ -107,19 +107,19 @@ export function SkillsSection() {
             ))}
           </div>
 
-          <div className="space-y-6">
+          <div className="space-y-8">
             <h3 className="text-lg sm:text-xl font-semibold">
               {skillsData.softSkillsTitle}
             </h3>
-            <p className="text-sm sm:text-base text-muted-foreground max-w-[65ch]">
+            <p className="text-sm sm:text-base leading-relaxed text-muted-foreground max-w-[65ch]">
               {skillsData.introduction}
             </p>
-            <div className="space-y-4">
+            <div className="space-y-10">
               {skillsData.softSkills.map((skill, index) => (
                 <Reveal
                   key={`casual-soft-skill-${index}`}
                   delayMs={index * 60}
-                  className="space-y-1"
+                  className="space-y-3"
                 >
                   <Badge
                     variant="secondary"
@@ -127,7 +127,7 @@ export function SkillsSection() {
                   >
                     {skill.name}
                   </Badge>
-                  <p className="text-sm text-muted-foreground max-w-[65ch]">
+                  <p className="text-sm leading-relaxed text-muted-foreground max-w-[65ch]">
                     {skill.description}
                   </p>
                 </Reveal>

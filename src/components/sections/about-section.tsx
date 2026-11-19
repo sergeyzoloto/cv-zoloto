@@ -22,7 +22,7 @@ export function AboutSection() {
         // Lead card: accent stripe and a soft tint
         "first:border-l-4 first:border-l-primary first:bg-gradient-to-br first:from-primary/10 first:to-card",
         // Casual: the cards become plain prose blocks
-        "casual:overflow-visible casual:border-0 casual:bg-transparent casual:shadow-none casual:py-0 casual:[&>*]:px-0 casual:gap-3 casual:bg-none casual:border-l-0 casual:hover:shadow-none",
+        "casual:overflow-visible casual:border-0 casual:bg-transparent casual:shadow-none casual:py-0 casual:[&>*]:px-0 casual:gap-3 casual:hover:shadow-none casual:first:bg-none casual:first:border-l-0",
         index >= aboutData.cards.length - 2
           ? "flex-[1_1_auto] lg:flex-[1_1_48%]"
           : "flex-[1_1_auto]",

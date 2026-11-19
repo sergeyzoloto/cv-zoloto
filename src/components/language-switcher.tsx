@@ -23,7 +23,7 @@ export function LanguageSwitcher() {
         <Button
           variant="ghost"
           size="sm"
-          className="relative"
+          className="relative focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:outline-none"
           aria-label="Select language"
         >
           <LanguageIndicator />
