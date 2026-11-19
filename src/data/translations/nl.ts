@@ -9,13 +9,13 @@ export const nl: TranslationData = {
     superpowerLead: "Mijn superkracht is",
     superpowers: [
       "problemen oplossen",
-      "rommelige data omzetten in heldere beslissingen",
-      "snel leren en dingen opleveren",
-      "empathie",
+      "rommelige data omzetten in beslissingen",
+      "dingen opleveren",
+      "gezonde empathie",
       "brede expertise",
-      "een analytische instelling",
-      "kritisch denken",
-      "werken met relationele databases",
+      "de mindset van een analist",
+      "de vaardigheden van een ontwikkelaar",
+      "relationele databases",
       "complexe modellen bouwen",
       "sterke technische vaardigheden",
       "snel leren",
@@ -255,7 +255,7 @@ export const nl: TranslationData = {
       {
         title: "Carrièredoel",
         content:
-          "Goed opgeleide analist die nu overstapt naar ontwikkeling. Met sterke technische vaardigheden, gebaseerd op een ingenieursopleiding en een intensieve coding bootcamp, ben ik klaar om in een team aan de slag te gaan als softwareontwikkelaar.",
+          "Analist die nu overstapt naar ontwikkeling. Met sterke technische vaardigheden, gebaseerd op een ingenieursopleiding en een intensieve coding bootcamp, ben ik klaar om in een team aan de slag te gaan als softwareontwikkelaar.",
       },
       {
         title: "Wat ik bied",

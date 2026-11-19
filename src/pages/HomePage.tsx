@@ -14,7 +14,7 @@ function HomePage() {
 
   return (
     <div className="min-h-dvh bg-background font-sans antialiased">
-      {/* Formal: <main> is the scroll container, one section per screen.
+      {/* Formal: <main> is the scroll container, sections scroll freely (no snapping).
           Casual: the document scrolls; pb-16 clears the fixed footer.
           Only the className changes, so the sections are never remounted
           and the IntersectionObservers keep their targets. */}
@@ -23,7 +23,7 @@ function HomePage() {
           "scroll-smooth sm:scroll-smooth",
           isCasual
             ? "min-h-dvh pb-16"
-            : "snap-y snap-mandatory overflow-y-scroll h-dvh",
+            : "overflow-y-scroll h-dvh",
         )}
       >
         <HeroSection />

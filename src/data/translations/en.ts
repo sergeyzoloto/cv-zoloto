@@ -6,16 +6,16 @@ export const en: TranslationData = {
     title: "Analyst-Developer based in\u00A0The\u00A0Netherlands",
     roleLeft: "analyst",
     roleRight: "developer",
-    superpowerLead: "My superpower is",
+    superpowerLead: "My superpowers is",
     superpowers: [
       "solving problems",
-      "turning messy data into clear decisions",
-      "learning fast and shipping things",
-      "empathy",
+      "turning messy data into decisions",
+      "shipping things",
+      "healthy empathy",
       "broad expertise",
-      "an analytical mindset",
-      "critical thinking",
-      "working with relational databases",
+      "an analyst’s mindset",
+      "a developer’s skillset",
+      "relational databases",
       "building complex models",
       "strong technical skills",
       "learning quickly",
@@ -260,7 +260,7 @@ export const en: TranslationData = {
       {
         title: "Career Goal",
         content:
-          "Well-educated analyst now reconverting in development. Paired with strong technical skills rooted in an engineer education and an intensive coding boot camp, I'm ready to start working in a team as a software developer.",
+          "Analyst now reconverting in development. Paired with strong technical skills rooted in an engineer education and an intensive coding boot camp, I'm ready to start working in a team as a software developer.",
       },
       {
         title: "What I Offer",

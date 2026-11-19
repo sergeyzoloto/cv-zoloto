@@ -63,7 +63,6 @@ export function HeroSection() {
         // top in both tones, and unlike dvh it doesn't relayout the page
         // while casual scrolls the document and the bar collapses.
         "flex min-h-svh w-full items-center justify-center overflow-hidden py-10",
-        !isCasual && "snap-start snap-always",
       )}
     >
       <div className="page-container flex w-full flex-col items-center gap-8">
@@ -92,12 +91,12 @@ export function HeroSection() {
           <p className="hero-role font-bold leading-none tracking-tighter order-1 md:text-center">
             {profile.roleLeft}
           </p>
-          <p className="hero-role font-bold leading-none tracking-tighter order-3 md:text-center">
+          <p className="hero-role hero-role-alt font-bold leading-none tracking-tighter order-3 md:text-center">
             {profile.roleRight}
           </p>
         </div>
 
-        <Superpower className="mt-4 md:mt-8" />
+        <Superpower className="mt-1 md:mt-3" />
 
         {/* Always stacked on mobile, so the arrangement never depends on
             whether the labels fit in 170px */}

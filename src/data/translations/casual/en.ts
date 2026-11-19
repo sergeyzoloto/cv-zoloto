@@ -53,6 +53,8 @@ export const casualEn: CasualOverlay = {
         position: "Head of Marketing",
         description:
           "A small wine-focused bar in Moscow, opened by friends with an outside investor",
+        shortResponsibilities:
+          "Built the marketing strategy and ran the day-to-day operations",
       },
     ],
   },
@@ -85,7 +87,7 @@ export const casualEn: CasualOverlay = {
       {
         title: "What I'm after",
         content:
-          "A junior developer seat in a team of people who know more than I do. Interesting projects, colleagues to learn from, and room to grow.",
+          "A junior developer role in a team of professionals. Interesting projects, colleagues to learn from, and room to grow.",
       },
       {
         title: "What I bring",
