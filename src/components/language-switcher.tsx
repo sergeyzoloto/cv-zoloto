@@ -18,7 +18,7 @@ export function LanguageSwitcher() {
   // Find the current language option
 
   return (
-    <DropdownMenu>
+    <DropdownMenu modal={false}>
       <DropdownMenuTrigger asChild>
         <Button
           variant="ghost"
