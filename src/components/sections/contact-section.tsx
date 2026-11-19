@@ -18,7 +18,7 @@ export function ContactSection() {
     <Card
       key="contact-info"
       // Adjust height for mobile; casual scrolls with the document instead
-      className="overflow-y-auto h-full max-h-[calc(100vh-15rem)] casual:overflow-visible casual:max-h-none casual:h-auto casual:rounded-2xl casual:w-full transition-all duration-200 motion-reduce:transition-none hover:shadow-md hover:border-primary/40 casual:hover:shadow-none"
+      className="overflow-y-auto h-full lg:max-h-[calc(100vh-15rem)] casual:overflow-visible casual:max-h-none casual:h-auto casual:rounded-2xl casual:w-full transition-all duration-200 motion-reduce:transition-none hover:shadow-md hover:border-primary/40 casual:hover:shadow-none"
     >
       <CardHeader>
         <CardTitle>{contactData.contactInfoTitle}</CardTitle>
