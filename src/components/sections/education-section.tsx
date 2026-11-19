@@ -7,7 +7,6 @@ import {
   CardHeader,
   CardTitle,
 } from "../ui/card";
-import { Badge } from "../ui/badge";
 import { Section } from "../ui/section";
 import { Reveal } from "../ui/reveal";
 import { useContent } from "@/hooks/use-content";
@@ -22,7 +21,7 @@ export function EducationSection() {
   const educationCards = educationData.education.map((edu, index) => (
     <Card
       key={`education-${index}`}
-      className="overflow-y-auto flex-[1_1_300px] h-full lg:h-auto max-h-[calc(100vh-15rem)]"
+      className="overflow-y-auto flex-[1_1_300px] h-full lg:h-auto max-h-[calc(100vh-15rem)] transition-all duration-200 motion-reduce:transition-none hover:-translate-y-0.5 hover:shadow-md hover:border-primary/40"
     >
       <CardHeader className="flex flex-row flex-wrap items-start justify-between gap-4">
         <div className="flex flex-row items-center gap-4 mb-2">
@@ -45,12 +44,14 @@ export function EducationSection() {
           </div>
           <div className="flex flex-col gap-2">
             <CardTitle>{edu.degree}</CardTitle>
-            <CardDescription>{edu.institution}</CardDescription>
+            <CardDescription className="text-primary font-medium">
+              {edu.institution}
+            </CardDescription>
+            <p className="font-mono text-xs text-muted-foreground">
+              {edu.period.replace(" - ", " → ")}
+            </p>
           </div>
         </div>
-        <Badge variant="outline" className="text-sm">
-          {edu.period}
-        </Badge>
       </CardHeader>
       <CardContent className="space-y-4">
         <div className="ml-auto"></div>

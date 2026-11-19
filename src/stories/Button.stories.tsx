@@ -12,7 +12,14 @@ const meta = {
   argTypes: {
     variant: {
       control: "select",
-      options: ["default", "destructive", "outline", "secondary", "ghost", "link"],
+      options: [
+        "default",
+        "destructive",
+        "outline",
+        "secondary",
+        "ghost",
+        "link",
+      ],
     },
     size: { control: "select", options: ["default", "sm", "lg", "icon"] },
     disabled: { control: "boolean" },
@@ -52,13 +59,20 @@ export const Icon: Story = {
 export const AllVariants: Story = {
   render: (args) => (
     <div className="flex flex-wrap gap-2">
-      {(["default", "destructive", "outline", "secondary", "ghost", "link"] as const).map(
-        (variant) => (
-          <Button key={variant} {...args} variant={variant}>
-            {variant}
-          </Button>
-        )
-      )}
+      {(
+        [
+          "default",
+          "destructive",
+          "outline",
+          "secondary",
+          "ghost",
+          "link",
+        ] as const
+      ).map((variant) => (
+        <Button key={variant} {...args} variant={variant}>
+          {variant}
+        </Button>
+      ))}
     </div>
   ),
 };

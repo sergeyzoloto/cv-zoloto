@@ -8,7 +8,10 @@ const meta = {
   tags: ["autodocs"],
   args: { placeholder: "Email", type: "email", className: "w-72" },
   argTypes: {
-    type: { control: "select", options: ["text", "email", "password", "number", "file"] },
+    type: {
+      control: "select",
+      options: ["text", "email", "password", "number", "file"],
+    },
     disabled: { control: "boolean" },
   },
 } satisfies Meta<typeof Input>;
@@ -19,6 +22,10 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {};
 export const WithValue: Story = { args: { defaultValue: "hello@example.com" } };
 export const Disabled: Story = { args: { disabled: true } };
-export const Invalid: Story = { args: { "aria-invalid": true, defaultValue: "not-an-email" } };
-export const Password: Story = { args: { type: "password", placeholder: "Password" } };
+export const Invalid: Story = {
+  args: { "aria-invalid": true, defaultValue: "not-an-email" },
+};
+export const Password: Story = {
+  args: { type: "password", placeholder: "Password" },
+};
 export const File: Story = { args: { type: "file" } };

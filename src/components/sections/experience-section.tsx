@@ -22,28 +22,28 @@ export function ExperienceSection() {
   // Render experience cards
   const renderExperienceCard = (
     experience: (typeof experienceData.items)[0],
-    index: number
+    index: number,
   ) => (
     <Card
       key={`experience-${index}`}
-      className="overflow-y-auto h-full lg:h-auto flex-[3_1_300px] max-h-[calc(100vh-15rem)]"
+      className="overflow-y-auto h-full lg:h-auto flex-[3_1_300px] max-h-[calc(100vh-15rem)] transition-all duration-200 motion-reduce:transition-none hover:-translate-y-0.5 hover:shadow-md hover:border-primary/40"
     >
       <CardHeader>
-        <div className="flex flex-row justify-between gap-4">
-          <div className="flex flex-col gap-4">
-            <CardTitle>{experience.company}</CardTitle>
-            <CardDescription>{experience.position}</CardDescription>
-          </div>
-          <Badge variant="outline" className="w-fit h-fit">
-            {experience.period}
-          </Badge>
+        <div className="flex flex-col gap-1">
+          <CardTitle>{experience.company}</CardTitle>
+          <CardDescription className="text-primary font-medium">
+            {experience.position}
+          </CardDescription>
+          <p className="font-mono text-xs text-muted-foreground">
+            {experience.period.replace(" - ", " → ")}
+          </p>
         </div>
       </CardHeader>
       <CardContent className="overflow-y-auto px-4 text-sm xl:text-base">
         {/* Scrollable content */}
         <div className="px-2 space-y-4">
           <div>
-            <h4 className="font-medium">
+            <h4 className="font-medium text-primary">
               {experienceData.responsibilitiesLabel}
             </h4>
             <ul className="list-disc pl-5 mt-2 space-y-1">
@@ -53,7 +53,9 @@ export function ExperienceSection() {
             </ul>
           </div>
           <div>
-            <h4 className="font-medium">{experienceData.achievementsLabel}</h4>
+            <h4 className="font-medium text-primary">
+              {experienceData.achievementsLabel}
+            </h4>
             <ul className="list-disc pl-5 mt-2 space-y-1">
               {experience.achievements.map((achievement, achIndex) => (
                 <li key={`ach-${index}-${achIndex}`}>{achievement}</li>
@@ -62,7 +64,7 @@ export function ExperienceSection() {
           </div>
           {experience.technologies && (
             <div>
-              <h4 className="font-medium">
+              <h4 className="font-medium text-primary">
                 {experienceData.technologiesLabel}
               </h4>
               <div className="flex flex-wrap gap-2 mt-2">
@@ -82,7 +84,7 @@ export function ExperienceSection() {
   // Casual: every role on one timeline, told in short prose
   const renderTimelineEntry = (
     experience: (typeof experienceData.items)[0],
-    index: number
+    index: number,
   ) => {
     const shortLines = [
       experience.shortResponsibilities,
@@ -122,7 +124,7 @@ export function ExperienceSection() {
               {[...experience.responsibilities, ...experience.achievements].map(
                 (line, lineIndex) => (
                   <li key={`experience-full-${index}-${lineIndex}`}>{line}</li>
-                )
+                ),
               )}
             </ul>
           )}
@@ -152,7 +154,7 @@ export function ExperienceSection() {
       >
         <div className="w-full max-w-3xl mx-auto sm:mx-0">
           {experienceData.items.map((experience, index) =>
-            renderTimelineEntry(experience, index)
+            renderTimelineEntry(experience, index),
           )}
         </div>
       </Section>
@@ -167,7 +169,7 @@ export function ExperienceSection() {
       useCarouselOnMobile={true}
       carouselChildrenFilter={() =>
         experienceData.items.map((experience, index) =>
-          renderExperienceCard(experience, index)
+          renderExperienceCard(experience, index),
         )
       }
     >

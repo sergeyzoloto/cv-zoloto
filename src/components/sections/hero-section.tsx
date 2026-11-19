@@ -63,7 +63,7 @@ export function HeroSection() {
         // top in both tones, and unlike dvh it doesn't relayout the page
         // while casual scrolls the document and the bar collapses.
         "flex min-h-svh w-full items-center justify-center overflow-hidden py-10",
-        !isCasual && "snap-start snap-always"
+        !isCasual && "snap-start snap-always",
       )}
     >
       <div className="page-container flex w-full flex-col items-center gap-8">
@@ -76,7 +76,7 @@ export function HeroSection() {
               // stacked column still clears the header and footer: 432px is
               // those 80px plus the roles, gaps, tagline and buttons around it.
               // Below 160px the section grows and scrolls instead.
-              "relative aspect-square w-full max-w-[clamp(160px,100svh_-_432px,250px)] order-2 md:size-[250px] md:max-w-none"
+              "relative aspect-square w-full max-w-[clamp(160px,100svh_-_432px,250px)] order-2 md:size-[250px] md:max-w-none",
             )}
           >
             <span aria-hidden="true" className="hero-photo-outline" />

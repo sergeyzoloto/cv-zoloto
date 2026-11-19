@@ -17,7 +17,7 @@ export const ScrollProvider: React.FC<{
         const visibleEntries = entries.filter((entry) => entry.isIntersecting);
         if (visibleEntries.length > 0) {
           const mostVisible = visibleEntries.sort(
-            (a, b) => b.intersectionRatio - a.intersectionRatio
+            (a, b) => b.intersectionRatio - a.intersectionRatio,
           )[0];
           const newSectionId = mostVisible.target.id;
 
@@ -29,7 +29,7 @@ export const ScrollProvider: React.FC<{
           });
         }
       },
-      { threshold: 0.5 }
+      { threshold: 0.5 },
     );
 
     observerRef.current = observer;

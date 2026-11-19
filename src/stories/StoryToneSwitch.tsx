@@ -1,5 +1,9 @@
 import { useEffect, useState, type ReactNode } from "react";
-import { ToneProviderContext, toggleTone, useTone } from "@/context/tone-context";
+import {
+  ToneProviderContext,
+  toggleTone,
+  useTone,
+} from "@/context/tone-context";
 import type { Tone } from "@/types/tone";
 
 /**
@@ -7,7 +11,9 @@ import type { Tone } from "@/types/tone";
  * mounted and only the context value and the <html> class change. Starts from
  * the toolbar's tone.
  */
-export function StoryToneSwitch({ children }: Readonly<{ children: ReactNode }>) {
+export function StoryToneSwitch({
+  children,
+}: Readonly<{ children: ReactNode }>) {
   const toolbarTone = useTone().tone;
   const [tone, setTone] = useState<Tone>(toolbarTone);
 

@@ -46,7 +46,7 @@ function measureHero(canvasElement: HTMLElement) {
         if (!el) throw new Error(`${key} not rendered`);
         const { x, y, width, height } = el.getBoundingClientRect();
         return [key, { x, y, width, height }];
-      })
+      }),
     ),
   };
 }
@@ -54,7 +54,7 @@ function measureHero(canvasElement: HTMLElement) {
 /** Wait for the re-render and for any transition that could move a box. */
 async function settled() {
   await new Promise((resolve) =>
-    requestAnimationFrame(() => requestAnimationFrame(resolve))
+    requestAnimationFrame(() => requestAnimationFrame(resolve)),
   );
   await Promise.all(document.getAnimations().map((a) => a.finished));
 }
@@ -66,7 +66,9 @@ async function settled() {
  */
 export const ToneSwitchKeepsGeometry: Story = {
   globals: { tone: "formal" },
-  decorators: [(Story) => createElement(StoryToneSwitch, null, createElement(Story))],
+  decorators: [
+    (Story) => createElement(StoryToneSwitch, null, createElement(Story)),
+  ],
   play: async ({ canvasElement, step }) => {
     const canvas = within(canvasElement);
     const toggle = canvas.getByRole("button", { name: /switch tone/i });
@@ -77,7 +79,7 @@ export const ToneSwitchKeepsGeometry: Story = {
       await step(`switch to ${tone}`, async () => {
         await userEvent.click(toggle);
         await waitFor(() =>
-          expect(document.documentElement.dataset.tone).toBe(tone)
+          expect(document.documentElement.dataset.tone).toBe(tone),
         );
         await settled();
         const current = measureHero(canvasElement);
@@ -87,7 +89,10 @@ export const ToneSwitchKeepsGeometry: Story = {
         for (const [key, box] of Object.entries(current.boxes)) {
           for (const side of ["x", "y", "width", "height"] as const) {
             const drift = Math.abs(box[side] - formal.boxes[key][side]);
-            expect(drift, `${key}.${side} moved in ${tone}`).toBeLessThanOrEqual(1);
+            expect(
+              drift,
+              `${key}.${side} moved in ${tone}`,
+            ).toBeLessThanOrEqual(1);
           }
         }
 
@@ -95,7 +100,9 @@ export const ToneSwitchKeepsGeometry: Story = {
         // unfocusable and left out of the links' names.
         const links = within(current.hero).getAllByRole("link");
         expect(links).toHaveLength(2);
-        for (const copy of current.hero.querySelectorAll('[aria-hidden="true"]')) {
+        for (const copy of current.hero.querySelectorAll(
+          '[aria-hidden="true"]',
+        )) {
           expect(copy).toHaveClass("invisible");
           expect(copy.querySelector("a, button, [tabindex]")).toBeNull();
         }

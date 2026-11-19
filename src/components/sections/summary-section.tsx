@@ -25,24 +25,21 @@ export function SummarySection() {
   // Render summary cards
   const renderExperienceCard = (
     experience: (typeof experienceData.items)[0],
-    index: number
+    index: number,
   ) => (
-    <Card key={`summary-${index}`}>
+    <Card
+      key={`summary-${index}`}
+      className="transition-all duration-200 motion-reduce:transition-none hover:-translate-y-0.5 hover:shadow-md hover:border-primary/40"
+    >
       <CardHeader>
-        <div className="flex flex-row w-full items-start md:justify-between gap-4">
-          <div className="flex flex-col gap-2 w-full">
-            <CardTitle>{experience.company}</CardTitle>
-            <CardDescription>{experience.position}</CardDescription>
-          </div>
-          <div className="flex gap-2 flex-col sm:flex-row md:flex-col lg:flex-row">
-            <Badge variant="outline" className="w-fit h-fit">
-              {experience.period.split(" - ")[0]}
-            </Badge>
-            <p className="hidden sm:block md:hidden lg:block">-</p>
-            <Badge variant="outline" className="w-fit h-fit">
-              {experience.period.split(" - ")[1]}
-            </Badge>
-          </div>
+        <div className="flex flex-col gap-1 w-full">
+          <CardTitle>{experience.company}</CardTitle>
+          <CardDescription className="text-primary font-medium">
+            {experience.position}
+          </CardDescription>
+          <p className="font-mono text-xs text-muted-foreground">
+            {experience.period.replace(" - ", " → ")}
+          </p>
         </div>
       </CardHeader>
       <CardContent className="overflow-y-auto max-h-full px-4">
@@ -57,9 +54,11 @@ export function SummarySection() {
 
   // Render brief intro card
   const renderBriefIntroCard = () => (
-    <Card className="md:col-span-2">
+    <Card className="md:col-span-2 border-l-4 border-l-primary bg-gradient-to-br from-primary/10 to-card">
       <CardContent>
-        <p className="text-base xl:text-xl">{summaryData.briefIntro}</p>
+        <p className="text-base xl:text-xl font-medium">
+          {summaryData.briefIntro}
+        </p>
       </CardContent>
     </Card>
   );
@@ -74,8 +73,8 @@ export function SummarySection() {
         {skillsData.skillSet.map((skill, index) => (
           <Badge
             key={`summary-skill-${index}`}
-            variant="outline"
-            className="w-fit h-fit mb-2 mr-2 last:mb-0 last:mr-0 text-base px-3 py-1"
+            variant="secondary"
+            className="w-fit h-fit mb-2 mr-2 last:mb-0 last:mr-0 text-sm px-3 py-1 rounded-md border border-transparent transition-colors hover:border-primary/50"
           >
             {skill}
           </Badge>
@@ -91,22 +90,16 @@ export function SummarySection() {
         <CardTitle>{educationData.title}</CardTitle>
       </CardHeader>
       <CardContent>
-        <ul className="flex flex-col gap-8">
+        <ul className="flex flex-col divide-y divide-border">
           {educationData.education.map((edu, index) => (
             <li
               key={`summary-edu-${index}`}
-              className="text-sm flex flex-col gap-2"
+              className="text-sm flex flex-col gap-2 py-4 first:pt-0 last:pb-0"
             >
               <p className="font-bold">{edu.degree}</p>
-              <div className="flex flex-row items-center gap-2">
-                <Badge variant="outline" className="w-fit h-fit">
-                  {edu.period.split(" - ")[0]}
-                </Badge>
-                <span aria-hidden>-</span>
-                <Badge variant="outline" className="w-fit h-fit">
-                  {edu.period.split(" - ")[1]}
-                </Badge>
-              </div>
+              <p className="font-mono text-xs text-muted-foreground">
+                {edu.period.replace(" - ", " → ")}
+              </p>
               <p>{edu.shortDescription}</p>
             </li>
           ))}

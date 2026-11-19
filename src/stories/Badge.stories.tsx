@@ -26,13 +26,18 @@ export const Outline: Story = { args: { variant: "outline" } };
 export const SkillList: Story = {
   render: (args) => (
     <div className="flex max-w-sm flex-wrap gap-2">
-      {["React", "TypeScript", "Tailwind CSS", "Vite", "Storybook", "Vitest"].map(
-        (skill) => (
-          <Badge key={skill} {...args} variant="outline">
-            {skill}
-          </Badge>
-        )
-      )}
+      {[
+        "React",
+        "TypeScript",
+        "Tailwind CSS",
+        "Vite",
+        "Storybook",
+        "Vitest",
+      ].map((skill) => (
+        <Badge key={skill} {...args} variant="outline">
+          {skill}
+        </Badge>
+      ))}
     </div>
   ),
 };

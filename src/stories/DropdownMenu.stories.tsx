@@ -69,10 +69,16 @@ function CheckboxesDemo() {
         <Button variant="outline">View</Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-56">
-        <DropdownMenuCheckboxItem checked={showBar} onCheckedChange={setShowBar}>
+        <DropdownMenuCheckboxItem
+          checked={showBar}
+          onCheckedChange={setShowBar}
+        >
           Status bar
         </DropdownMenuCheckboxItem>
-        <DropdownMenuCheckboxItem checked={showPanel} onCheckedChange={setShowPanel}>
+        <DropdownMenuCheckboxItem
+          checked={showPanel}
+          onCheckedChange={setShowPanel}
+        >
           Panel
         </DropdownMenuCheckboxItem>
       </DropdownMenuContent>

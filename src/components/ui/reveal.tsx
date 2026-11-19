@@ -44,7 +44,7 @@ export function Reveal({
         "motion-safe:data-[in-view=false]:opacity-0",
         "motion-safe:data-[in-view=false]:translate-y-6",
         "motion-reduce:transition-none",
-        className
+        className,
       )}
     >
       {children}

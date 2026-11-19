@@ -126,7 +126,7 @@ export function Section({
       <div
         className={cn(
           "w-full flex flex-col items-stretch",
-          isCasual ? "" : "h-full justify-center"
+          isCasual ? "" : "h-full justify-center",
         )}
       >
         {children}
@@ -142,13 +142,13 @@ export function Section({
       className={cn(
         "flex flex-col",
         isCasual ? "scroll-mt-12" : "snap-start snap-always overflow-y-auto",
-        className
+        className,
       )}
     >
       <div
         className={cn(
           "page-container flex flex-col sm:items-center",
-          isCasual ? "w-full py-12 lg:py-20" : "section-container h-full"
+          isCasual ? "w-full py-12 lg:py-20" : "section-container h-full",
         )}
       >
         {showRotateMessage && (
@@ -163,7 +163,7 @@ export function Section({
             <Reveal
               className={cn(
                 "space-y-2 text-center flex-none",
-                isCasual ? "sm:text-left sm:self-start" : "xl:mt-4"
+                isCasual ? "sm:text-left sm:self-start" : "xl:mt-4",
               )}
             >
               <h2
@@ -171,7 +171,7 @@ export function Section({
                   "font-bold tracking-tighter",
                   isCasual
                     ? "text-2xl sm:text-3xl xl:text-5xl"
-                    : "text-lg sm:text-xl xl:text-3xl"
+                    : "text-lg sm:text-xl xl:text-3xl",
                 )}
               >
                 {title}
@@ -182,7 +182,7 @@ export function Section({
                     "mx-auto text-muted-foreground",
                     isCasual
                       ? "text-sm sm:text-base xl:text-lg max-w-[65ch] sm:mx-0"
-                      : "text-xs sm:text-sm xl:text-base whitespace-nowrap max-w-[700px]"
+                      : "text-xs sm:text-sm xl:text-base whitespace-nowrap max-w-[700px]",
                   )}
                 >
                   {description}
@@ -193,7 +193,9 @@ export function Section({
               delayMs={120}
               className={cn(
                 "flex flex-col w-full justify-center items-center",
-                isCasual ? "mt-6 lg:mt-10" : "flex-1 h-full mt-2 lg:mt-4 xl:mt-6"
+                isCasual
+                  ? "mt-6 lg:mt-10"
+                  : "flex-1 h-full mt-2 lg:mt-4 xl:mt-6",
               )}
             >
               {renderContent()}

@@ -27,7 +27,9 @@ const slides = Array.from({ length: 5 }, (_, i) => i + 1);
 export const Default: Story = {
   render: (args) => (
     <Carousel {...args} className="w-full max-w-xs">
-      <CarouselContent className={args.orientation === "vertical" ? "h-[200px]" : undefined}>
+      <CarouselContent
+        className={args.orientation === "vertical" ? "h-[200px]" : undefined}
+      >
         {slides.map((n) => (
           <CarouselItem key={n}>
             <Card>

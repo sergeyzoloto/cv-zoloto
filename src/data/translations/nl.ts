@@ -237,8 +237,7 @@ export const nl: TranslationData = {
       },
       {
         name: "Zelfstandig",
-        description:
-          "Kan autonoom werken zonder voortdurende supervisie.",
+        description: "Kan autonoom werken zonder voortdurende supervisie.",
       },
       {
         name: "Financiële expertise",

@@ -58,7 +58,7 @@ export function Superpower({ className }: Readonly<{ className?: string }>) {
       aria-label={`${superpowerLead} ${ending}`}
       className={cn(
         "subtitle superpower w-full text-balance text-center text-muted-foreground",
-        className
+        className,
       )}
     >
       {/* The ending sits on its own line. Typed and not-yet-typed text share

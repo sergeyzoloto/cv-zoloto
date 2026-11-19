@@ -23,7 +23,7 @@ function HomePage() {
           "scroll-smooth sm:scroll-smooth",
           isCasual
             ? "min-h-dvh pb-16"
-            : "snap-y snap-mandatory overflow-y-scroll h-dvh"
+            : "snap-y snap-mandatory overflow-y-scroll h-dvh",
         )}
       >
         <HeroSection />
