@@ -11,7 +11,7 @@ export function Header() {
   const t = translations[language];
 
   return (
-    <header className="border-none fixed min-w-screen top-0 z-50 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="app-bar border-none fixed inset-x-0 top-0 z-50 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="flex h-10 items-center justify-between width-container mx-auto">
         <a href="/" className="font-bold mr-6">
           {t.profile.name}

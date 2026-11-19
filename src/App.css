@@ -22,22 +22,40 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--background); /* Track color */
+  background: var(--color-background); /* Track color */
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--muted-foreground); /* Thumb color */
+  background: var(--color-muted-foreground); /* Thumb color */
   border-radius: var(--radius); /* Rounded corners */
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--popover-foreground); /* Thumb color on hover */
+  background: var(--color-popover-foreground); /* Thumb color on hover */
 }
 
-/* Styling for Firefox */
-* {
-  scrollbar-width: thin; /* Thin scrollbar */
-  scrollbar-color: var(--muted-foreground) var(--background); /* Thumb and track colors */
+/* Styling for Firefox. Chromium (121+) would let these standard properties
+   override the ::-webkit-scrollbar rules above, so keep them Firefox-only. */
+@supports not selector(::-webkit-scrollbar) {
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-muted-foreground) var(--color-background);
+  }
+}
+
+/* Width of the scroll container's scrollbar. In the formal tone <main> scrolls,
+   so the scrollbar spans the full height and the fixed header/footer must stop
+   short of it instead of covering it. */
+:root {
+  --scrollbar-w: 12px;
+}
+@supports not selector(::-webkit-scrollbar) {
+  :root {
+    --scrollbar-w: 8px;
+  }
+}
+.formal .app-bar {
+  right: var(--scrollbar-w);
 }
 
 .width-container {

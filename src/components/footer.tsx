@@ -75,7 +75,7 @@ export function Footer() {
   };
 
   return (
-    <footer className="border-none fixed bottom-0 z-50 min-w-screen border-t bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <footer className="app-bar border-none fixed inset-x-0 bottom-0 z-50 border-t bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="flex items-center justify-between h-10 flex-row width-container mx-auto">
         <div className="flex items-center flex-row gap-2 px-0 pt-0">
           <a
