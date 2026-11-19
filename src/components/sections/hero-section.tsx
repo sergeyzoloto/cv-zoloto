@@ -69,21 +69,24 @@ export function HeroSection() {
       <div className="page-container flex w-full flex-col items-center gap-8">
         {/* Photo in the middle, one role on each side. Stacked on mobile,
             where the roles don't fit beside the photo. */}
-        <div className="flex w-full flex-col items-center gap-4 md:grid md:items-center md:grid-cols-[1fr_auto_1fr] md:gap-8">
+        <div className="flex w-full flex-col items-center gap-8 md:grid md:items-center md:grid-cols-[1fr_auto_1fr] md:gap-8">
           <div
             className={cn(
               // On short phones (iPhone SE) the photo gives way first, so the
-              // stacked column still clears the header and footer: 400px is
-              // those 80px plus the roles, tagline and buttons around it.
+              // stacked column still clears the header and footer: 432px is
+              // those 80px plus the roles, gaps, tagline and buttons around it.
               // Below 160px the section grows and scrolls instead.
-              "relative aspect-square w-full max-w-[clamp(160px,100svh_-_400px,250px)] overflow-hidden rounded-full bg-muted order-2 md:size-[250px] md:max-w-none"
+              "relative aspect-square w-full max-w-[clamp(160px,100svh_-_432px,250px)] order-2 md:size-[250px] md:max-w-none"
             )}
           >
-            <img
-              src={profile.profileImage || "/placeholder.svg"}
-              alt={profile.name}
-              className="h-full w-full object-cover"
-            />
+            <span aria-hidden="true" className="hero-photo-outline" />
+            <div className="hero-photo-blob h-full w-full overflow-hidden bg-muted">
+              <img
+                src={profile.profileImage || "/placeholder.svg"}
+                alt={profile.name}
+                className="h-full w-full object-cover"
+              />
+            </div>
           </div>
 
           <p className="hero-role font-bold leading-none tracking-tighter order-1 md:text-center">

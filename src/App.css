@@ -10,6 +10,59 @@
   font-size: 40px;
 }
 
+/* Hover: the role gets heavier and glows in the
+   primary colour. */
+.hero-role {
+  cursor: default;
+  transition:
+    font-weight 0.4s ease,
+    text-shadow 0.4s ease,
+    color 0.4s ease,
+    transform 0.4s ease;
+}
+
+@media (hover: hover) {
+  .hero-role:hover {
+    font-weight: 900;
+    color: var(--color-primary);
+    transform: scale(1.04);
+    text-shadow:
+      0 0 8px color-mix(in srgb, var(--color-primary) 70%, transparent),
+      0 0 24px color-mix(in srgb, var(--color-primary) 50%, transparent),
+      0 0 48px color-mix(in srgb, var(--color-primary) 30%, transparent);
+  }
+}
+
+/* Same glow for the tagline. Only colour and shadow change, so the typed
+   text never reflows. */
+.superpower {
+  transition:
+    color 0.4s ease,
+    text-shadow 0.4s ease;
+}
+
+@media (hover: hover) {
+  .superpower:hover {
+    color: var(--color-primary);
+    text-shadow:
+      0 0 8px color-mix(in srgb, var(--color-primary) 70%, transparent),
+      0 0 24px color-mix(in srgb, var(--color-primary) 50%, transparent),
+      0 0 48px color-mix(in srgb, var(--color-primary) 30%, transparent);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .superpower {
+    transition: none;
+  }
+  .hero-role {
+    transition: none;
+  }
+  .hero-role:hover {
+    transform: none;
+  }
+}
+
 @media screen and (min-width: 768px) {
   .hero-role {
     font-size: clamp(1.75rem, 4vw, 5.5rem);
@@ -106,4 +159,58 @@
   min-height: 0;
   margin-top: 0;
   margin-bottom: 0;
+}
+
+/* Photo: an organic blob plus a thin outline that crosses its edge and keeps
+   morphing, so the line seems to run around the photo in a wave. */
+.hero-photo-blob {
+  border-radius: 58% 42% 48% 52% / 45% 55% 45% 55%;
+  animation: hero-blob-wave 11s ease-in-out infinite;
+}
+
+/* Different duration and shape order than the outline, so the two edges
+   keep crossing each other instead of moving in lockstep. */
+@keyframes hero-blob-wave {
+  0%,
+  100% {
+    border-radius: 58% 42% 48% 52% / 45% 55% 45% 55%;
+  }
+  25% {
+    border-radius: 44% 56% 56% 44% / 56% 44% 56% 44%;
+  }
+  50% {
+    border-radius: 52% 48% 40% 60% / 42% 58% 42% 58%;
+  }
+  75% {
+    border-radius: 60% 40% 54% 46% / 52% 48% 60% 40%;
+  }
+}
+
+.hero-photo-outline {
+  position: absolute;
+  inset: -6%;
+  border: 1.5px solid var(--color-primary);
+  pointer-events: none;
+  border-radius: 45% 55% 52% 48% / 55% 45% 55% 45%;
+  animation: hero-outline-wave 9s ease-in-out infinite;
+}
+
+@keyframes hero-outline-wave {
+  0%,
+  100% {
+    border-radius: 45% 55% 52% 48% / 55% 45% 55% 45%;
+    transform: rotate(0deg) scale(1);
+  }
+  25% {
+    border-radius: 58% 42% 40% 60% / 48% 60% 40% 52%;
+    transform: rotate(8deg) scale(1.02);
+  }
+  50% {
+    border-radius: 40% 60% 55% 45% / 60% 42% 58% 40%;
+    transform: rotate(0deg) scale(0.98);
+  }
+  75% {
+    border-radius: 52% 48% 60% 40% / 42% 56% 44% 58%;
+    transform: rotate(-8deg) scale(1.02);
+  }
 }

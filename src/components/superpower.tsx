@@ -57,7 +57,7 @@ export function Superpower({ className }: Readonly<{ className?: string }>) {
     <p
       aria-label={`${superpowerLead} ${ending}`}
       className={cn(
-        "subtitle w-full text-balance text-center text-muted-foreground",
+        "subtitle superpower w-full text-balance text-center text-muted-foreground",
         className
       )}
     >
