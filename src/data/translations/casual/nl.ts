@@ -52,6 +52,8 @@ export const casualNl: CasualOverlay = {
       {
         description:
           "Een kleine wijnbar in Moskou, geopend door vrienden met een externe investeerder",
+        shortResponsibilities:
+          "De marketingstrategie opgesteld en de dagelijkse bediening georganiseerd",
       },
     ],
   },
@@ -84,7 +86,7 @@ export const casualNl: CasualOverlay = {
       {
         title: "Wat ik zoek",
         content:
-          "Een plek als junior ontwikkelaar in een team waar ik van kan leren. Uitdagende projecten, goede collega's en ruimte om te groeien.",
+          "Een plek als junior ontwikkelaar. Uitdagende projecten, goede collega's en ruimte om te groeien.",
       },
       {
         title: "Wat ik meebreng",

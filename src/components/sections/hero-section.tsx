@@ -92,7 +92,7 @@ export function HeroSection() {
           <p className="hero-role font-bold leading-none tracking-tighter order-1 md:text-center">
             {profile.roleLeft}
           </p>
-          <p className="hero-role font-bold leading-none tracking-tighter order-3 md:text-center">
+          <p className="hero-role hero-role-alt font-bold leading-none tracking-tighter order-3 md:text-center">
             {profile.roleRight}
           </p>
         </div>

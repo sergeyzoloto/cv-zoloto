@@ -21,28 +21,50 @@
     transform 0.4s ease;
 }
 
+/* Each role glows in its own colour. The analyst keeps the theme's primary;
+   the developer gets a warm second hue per theme (light, dark, casual). */
+:root {
+  --role-alt: rgb(217, 119, 6);
+}
+.dark {
+  --role-alt: rgb(251, 191, 36);
+}
+.casual {
+  --role-alt: rgb(161, 98, 7);
+}
+.casual.dark {
+  --role-alt: rgb(245, 200, 90);
+}
+
+.hero-role {
+  --glow: var(--color-primary);
+}
+.hero-role-alt {
+  --glow: var(--role-alt);
+}
+
 @media (hover: hover) {
   .hero-role:hover {
     font-weight: 900;
-    color: var(--color-primary);
+    color: var(--glow);
     transform: scale(1.04);
     text-shadow:
-      0 0 8px color-mix(in srgb, var(--color-primary) 70%, transparent),
-      0 0 24px color-mix(in srgb, var(--color-primary) 50%, transparent),
-      0 0 48px color-mix(in srgb, var(--color-primary) 30%, transparent);
+      0 0 8px color-mix(in srgb, var(--glow) 70%, transparent),
+      0 0 24px color-mix(in srgb, var(--glow) 50%, transparent),
+      0 0 48px color-mix(in srgb, var(--glow) 30%, transparent);
   }
 }
 
-/* Same glow for the tagline. Only colour and shadow change, so the typed
-   text never reflows. */
-.superpower {
+/* Same glow for the tagline's ending (the second line only). Only colour and
+   shadow change, so the typed text never reflows. */
+.superpower-ending {
   transition:
     color 0.4s ease,
     text-shadow 0.4s ease;
 }
 
 @media (hover: hover) {
-  .superpower:hover {
+  .superpower-ending:hover {
     color: var(--color-primary);
     text-shadow:
       0 0 8px color-mix(in srgb, var(--color-primary) 70%, transparent),
@@ -52,7 +74,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .superpower {
+  .superpower-ending {
     transition: none;
   }
   .hero-role {

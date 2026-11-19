@@ -66,7 +66,7 @@ export function Superpower({ className }: Readonly<{ className?: string }>) {
           frame. */}
       <span aria-hidden>
         <span className="block">{superpowerLead}</span>
-        <span className="block">
+        <span className="superpower-ending mx-auto block w-fit">
           {ending.slice(0, count)}
           <span className="invisible">{ending.slice(count)}</span>
         </span>
