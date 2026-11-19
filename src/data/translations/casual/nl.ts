@@ -13,7 +13,7 @@ export const casualNl: CasualOverlay = {
   summary: {
     title: "Kort samengevat",
     briefIntro:
-      "Ik ben opgeleid als bedrijfsanalist en stap nu over naar webontwikkeling. Ruim vijf jaar werkte ik als analist, bij kleine bedrijven én grote ondernemingen: budgetten plannen en complexe financiële en marketingmodellen bouwen. Nauwkeurig waar het moet, flexibel waar het kan. Met een technische achtergrond als ingenieur en een intensieve codeeropleiding erbij ben ik klaar om als junior ontwikkelaar in een team aan de slag te gaan.",
+      "Ik ben opgeleid als bedrijfsanalist en stap nu over naar webontwikkeling. Ruim vijf jaar werkte ik als analist, bij kleine bedrijven én grote ondernemingen: budgetten plannen en complexe financiële en marketingmodellen bouwen. Met een technische achtergrond als ingenieur en een intensieve codeeropleiding erbij ben ik klaar om als junior ontwikkelaar in een team aan de slag te gaan.",
   },
   experience: {
     title: "Waar ik gewerkt heb",
@@ -42,6 +42,7 @@ export const casualNl: CasualOverlay = {
           "Jaarplannen gemaakt waar tienduizenden collega's mee werkten",
       },
       {
+        position: "Senior financieel analist",
         description: "De grootste mobiele operator van Rusland",
         shortResponsibilities:
           "Tientallen financiële modellen kloppend gehouden",

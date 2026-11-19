@@ -11,6 +11,15 @@ export const nl: TranslationData = {
       "problemen oplossen",
       "rommelige data omzetten in heldere beslissingen",
       "snel leren en dingen opleveren",
+      "empathie",
+      "brede expertise",
+      "een analytische instelling",
+      "kritisch denken",
+      "werken met relationele databases",
+      "complexe modellen bouwen",
+      "sterke technische vaardigheden",
+      "snel leren",
+      "oog voor detail",
     ],
     profileImage: "/profile-pic.jpg",
     contactButton: "Neem contact op",
@@ -19,7 +28,7 @@ export const nl: TranslationData = {
   summary: {
     title: "Samenvatting",
     briefIntro:
-      "Opgeleide bedrijfsanalist die zich nu omschoolt naar webontwikkeling. Verantwoordelijk, gericht op teamwork, nauwkeurig maar flexibel. Vijf+ jaar ervaring als analist in kleine bedrijven en grote ondernemingen, met vaardigheden in budgetplanning en het maken van complexe financiële en marketingmodellen. Dankzij een sterke technische achtergrond als ingenieur en een intensieve codeeropleiding ben ik klaar om in een team te werken als junior ontwikkelaar.",
+      "Vijf+ jaar ervaring in zowel kleine bedrijven als grote ondernemingen. Vaardig in budgetplanning en het bouwen van complexe financiële en marketingmodellen.",
   },
   experience: {
     title: "Werkervaring",
@@ -163,12 +172,17 @@ export const nl: TranslationData = {
     technicalSkillsTitle: "Technische Vaardigheden",
     softSkillsTitle: "Soft Skills",
     skillSet: [
-      "JS, TS, React, Node",
-      "MongoDB, Express, SQL, Python",
+      "JavaScript",
+      "TypeScript",
+      "React",
+      "Node.js",
+      "MongoDB",
+      "SQL",
+      "Python",
       "Planning",
+      "Budgettering",
       "Modellering",
       "Zelfstandig",
-      "Snel lerend",
       "Aanpassingsvermogen",
     ],
     technicalSkills: [
@@ -222,14 +236,14 @@ export const nl: TranslationData = {
           "Gevoelig, empathisch, nauwkeurig, maar met humor. Verantwoordelijke en betrouwbare teamspeler.",
       },
       {
-        name: "Procesgericht",
+        name: "Zelfstandig",
         description:
-          "Rationele focus op resultaten, betrouwbaarheid en verantwoordelijkheidsgevoel.",
+          "Kan autonoom werken zonder voortdurende supervisie.",
       },
       {
         name: "Financiële expertise",
         description:
-          "Specifieke blik en mindset gericht op het bouwen van efficiënte processen. Amen.",
+          "Specifieke blik en mindset gericht op het bouwen van efficiënte processen en bewezen resultaten.",
       },
     ],
     introduction:
@@ -237,12 +251,12 @@ export const nl: TranslationData = {
   },
   about: {
     title: "Over Mij",
-    description: "Verantwoordelijk, teamgericht, nauwkeurig maar flexibel. ",
+    description: "Verantwoordelijk, teamgericht, nauwkeurig maar flexibel.",
     cards: [
       {
         title: "Carrièredoel",
         content:
-          "Met sterke technische vaardigheden, gebaseerd op een ingenieursopleiding en een intensieve coding bootcamp, ben ik klaar om in een team aan de slag te gaan als softwareontwikkelaar.",
+          "Goed opgeleide analist die nu overstapt naar ontwikkeling. Met sterke technische vaardigheden, gebaseerd op een ingenieursopleiding en een intensieve coding bootcamp, ben ik klaar om in een team aan de slag te gaan als softwareontwikkelaar.",
       },
       {
         title: "Wat ik bied",

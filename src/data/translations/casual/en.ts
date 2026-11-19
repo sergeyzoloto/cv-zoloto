@@ -13,7 +13,7 @@ export const casualEn: CasualOverlay = {
   summary: {
     title: "The short version",
     briefIntro:
-      "I trained as a business analyst and I'm now moving into web development. Five-plus years in small businesses and big corporations taught me budget planning and how to build complex financial and marketing models — meticulous where it counts, flexible everywhere else. Add an engineering education and an intensive coding boot camp on top, and I'm ready to join a team as a junior developer.",
+      "I trained as a business analyst and I'm now moving into web development. Five-plus years in small businesses and big corporations taught me budget planning and how to build complex financial and marketing models. Add an engineering education and an intensive coding boot camp on top, and I'm ready to join a team as a junior developer.",
   },
   experience: {
     title: "Where I've worked",
@@ -42,6 +42,7 @@ export const casualEn: CasualOverlay = {
           "Built the annual plans that tens of thousands of colleagues worked to",
       },
       {
+        position: "Senior Financial Analyst",
         description: "Russia's largest mobile operator",
         shortResponsibilities:
           "Kept dozens of financial models alive and accurate",

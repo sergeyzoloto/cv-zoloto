@@ -56,7 +56,7 @@ export function SkillsSection() {
         <div className="grid grid-cols-1 xs:grid-cols-2 gap-4">
           {skillsData.softSkills.map((skill, index) => (
             <div key={`soft-skill-${index}`} className="space-y-2">
-              <Badge className="w-full justify-center py-1.5">
+              <Badge className="w-full justify-center py-2 text-base">
                 {skill.name}
               </Badge>
               <p className="text-sm text-muted-foreground text-center">
@@ -118,7 +118,7 @@ export function SkillsSection() {
                   delayMs={index * 60}
                   className="space-y-1"
                 >
-                  <Badge variant="outline" className="text-sm px-3 py-1">
+                  <Badge variant="outline" className="text-base px-4 py-1.5">
                     {skill.name}
                   </Badge>
                   <p className="text-sm text-muted-foreground max-w-[65ch]">

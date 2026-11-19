@@ -11,6 +11,15 @@ export const en: TranslationData = {
       "solving problems",
       "turning messy data into clear decisions",
       "learning fast and shipping things",
+      "empathy",
+      "broad expertise",
+      "an analytical mindset",
+      "critical thinking",
+      "working with relational databases",
+      "building complex models",
+      "strong technical skills",
+      "learning quickly",
+      "attention to detail",
     ],
     profileImage: "/profile-pic.jpg",
     contactButton: "Contact Me",
@@ -19,7 +28,7 @@ export const en: TranslationData = {
   summary: {
     title: "Summary",
     briefIntro:
-      "Well-educated business analyst now reconverting in web development. Five+ years of experience in both small businesses and major corporations. Skilled in budget planning, building complex financial and marketing models.",
+      "Five+ years of experience in both small businesses and major corporations. Skilled in budget planning, building complex financial and marketing models.",
   },
   experience: {
     title: "Work Experience",
@@ -167,12 +176,17 @@ export const en: TranslationData = {
     technicalSkillsTitle: "Technical Skills",
     softSkillsTitle: "Soft Skills",
     skillSet: [
-      "JS, TS, React, Node",
-      "MongoDB, Express, SQL, Python",
+      "JavaScript",
+      "TypeScript",
+      "React",
+      "Node.js",
+      "MongoDB",
+      "SQL",
+      "Python",
       "Planning",
+      "Budgeting",
       "Modeling",
       "Independent",
-      "Fast learner",
       "Adaptive",
     ],
     technicalSkills: [
@@ -227,14 +241,13 @@ export const en: TranslationData = {
           "Sensitive, empathic, meticulous but humorous. Responsible and reliable team player.",
       },
       {
-        name: "Process-oriented",
-        description:
-          "Rational focus on results, reliability, and responsible attitude.",
+        name: "Independent",
+        description: "Able to work autonomously without constant supervision.",
       },
       {
         name: "Financial expertise",
         description:
-          "Specific perspective and mindset aimed at building efficient processes. Amen.",
+          "Specific perspective and mindset aimed at building efficient processes and proved results.",
       },
     ],
     introduction:
@@ -242,12 +255,12 @@ export const en: TranslationData = {
   },
   about: {
     title: "About Me",
-    description: "Responsible, teamwork-oriented, meticulous but flexible. ",
+    description: "Responsible, teamwork-oriented, meticulous but flexible.",
     cards: [
       {
         title: "Career Goal",
         content:
-          "Paired with strong technical skills rooted in an engineer education and an intensive coding boot camp, I'm ready to start working in a team as a software developer.",
+          "Well-educated analyst now reconverting in development. Paired with strong technical skills rooted in an engineer education and an intensive coding boot camp, I'm ready to start working in a team as a software developer.",
       },
       {
         title: "What I Offer",

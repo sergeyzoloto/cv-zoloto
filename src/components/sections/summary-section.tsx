@@ -75,7 +75,7 @@ export function SummarySection() {
           <Badge
             key={`summary-skill-${index}`}
             variant="outline"
-            className="w-fit h-fit mb-2 mr-2 last:mb-0 last:mr-0"
+            className="w-fit h-fit mb-2 mr-2 last:mb-0 last:mr-0 text-base px-3 py-1"
           >
             {skill}
           </Badge>
@@ -129,7 +129,7 @@ export function SummarySection() {
               <Badge
                 key={`summary-skill-${index}`}
                 variant="outline"
-                className="text-sm px-3 py-1"
+                className="text-base px-4 py-1.5"
               >
                 {skill}
               </Badge>
