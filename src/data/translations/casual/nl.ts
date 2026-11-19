@@ -6,7 +6,7 @@ import type { CasualOverlay } from "../types";
  */
 export const casualNl: CasualOverlay = {
   profile: {
-    title: "Analist die leerde programmeren — inmiddels in Nederland",
+    title: "Analist die leerde programmeren",
     contactButton: "Even kennismaken",
     downloadButton: "Pak het CV",
   },
@@ -23,7 +23,8 @@ export const casualNl: CasualOverlay = {
     technologiesLabel: "Waarmee ik werkte:",
     items: [
       {
-        description: "Een opleiding die full-stack ontwikkeling helemaal afdekt",
+        description:
+          "Een opleiding die full-stack ontwikkeling helemaal afdekt",
         shortResponsibilities:
           "Met een team een eenvoudige sociale netwerksite gebouwd",
         shortAchievements: "Hier begon mijn carrière in webontwikkeling",

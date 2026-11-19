@@ -6,7 +6,7 @@ import type { CasualOverlay } from "../types";
  */
 export const casualRu: CasualOverlay = {
   profile: {
-    title: "Аналитик, который научился писать код. Живу в Нидерландах",
+    title: "Аналитик и разработчик в Нидерландах",
     contactButton: "Написать мне",
     downloadButton: "Забрать резюме",
   },
