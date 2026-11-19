@@ -63,7 +63,6 @@ export function HeroSection() {
         // top in both tones, and unlike dvh it doesn't relayout the page
         // while casual scrolls the document and the bar collapses.
         "flex min-h-svh w-full items-center justify-center overflow-hidden py-10",
-        !isCasual && "snap-start snap-always",
       )}
     >
       <div className="page-container flex w-full flex-col items-center gap-8">
