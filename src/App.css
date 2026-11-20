@@ -174,7 +174,6 @@
    page itself scrolls. */
 @media (min-width: 1024px) {
   .section-container {
-    max-height: calc(100vh - 40px * 2);
     min-height: calc(100vh - 40px * 2);
   }
 }

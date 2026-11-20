@@ -141,7 +141,7 @@ export function Section({
       id={id}
       className={cn(
         "flex flex-col",
-        isCasual ? "scroll-mt-12" : "lg:overflow-y-auto",
+        isCasual && "scroll-mt-12",
         className,
       )}
     >

@@ -17,7 +17,7 @@ export function SkillsSection() {
   const technicalSkillsCard = (
     <Card
       key="technical-skills"
-      className="overflow-y-auto h-full lg:h-auto flex-[3_1_300px] lg:max-h-[calc(100vh-15rem)] transition-all duration-200 motion-reduce:transition-none hover:shadow-md hover:border-primary/40"
+      className="h-full lg:h-auto flex-[3_1_300px] transition-all duration-200 motion-reduce:transition-none hover:shadow-md hover:border-primary/40"
     >
       <CardHeader>
         <CardTitle>{skillsData.technicalSkillsTitle}</CardTitle>
@@ -44,7 +44,7 @@ export function SkillsSection() {
   const softSkillsCard = (
     <Card
       key="soft-skills"
-      className="overflow-y-auto h-full lg:h-auto flex-[3_1_300px] lg:max-h-[calc(100vh-15rem)] transition-all duration-200 motion-reduce:transition-none hover:shadow-md hover:border-primary/40"
+      className="h-full lg:h-auto flex-[3_1_300px] transition-all duration-200 motion-reduce:transition-none hover:shadow-md hover:border-primary/40"
     >
       <CardHeader>
         <CardTitle>{skillsData.softSkillsTitle}</CardTitle>
