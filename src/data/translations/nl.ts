@@ -271,7 +271,7 @@ export const nl: TranslationData = {
         content: [
           "uitdagende projecten, ambitieuze doelen, samenwerkingsgerichte omgeving",
           "balans tussen zelfstandig werken, teamwerk en cross-functionele samenwerking",
-          "organisatie die een groeimindset stimuleert en een cultuur van uitproberen en falen koestert",
+          "organisatie die een groeimindset stimuleert en leren bevordert",
         ],
         isListContent: true,
       },
