@@ -276,7 +276,7 @@ export const en: TranslationData = {
         content: [
           "challenging projects, ambitious goals, collaborative environment",
           "balance between autonomous work, team-, and cross-functional interactions",
-          "organization that encourages a growth mindset and fosters a try-and-fail culture",
+          "organization that encourages a growth mindset and fosters learning",
         ],
         isListContent: true,
       },
